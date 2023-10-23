@@ -12,4 +12,4 @@ project(
     LANGUAGES ASM C CXX
 )
 
-target_sources(app PRIVATE src/main.cpp)
+add_subdirectory(src)
