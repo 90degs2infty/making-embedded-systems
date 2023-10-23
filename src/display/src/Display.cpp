@@ -40,7 +40,7 @@ Display::Display(device const *gpio0, device const *gpio1)
 
 std::optional<Display> Display::init()
 {
-    device const *gpio0 = device_get_binding("GPIO_0");
+    device const *gpio0 = DEVICE_DT_GET_OR_NULL(DT_NODELABEL(gpio0));
 
     if (!gpio0)
     {
@@ -48,7 +48,7 @@ std::optional<Display> Display::init()
         return std::nullopt;
     }
 
-    device const *gpio1 = device_get_binding("GPIO_1");
+    device const *gpio1 = DEVICE_DT_GET_OR_NULL(DT_NODELABEL(gpio1));
 
     if (!gpio1)
     {
