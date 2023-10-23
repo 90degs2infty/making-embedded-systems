@@ -2,3 +2,9 @@
 # add_executable(app)
 
 add_subdirectory(src)
+
+target_link_libraries(
+    app
+    PRIVATE
+    display
+)
