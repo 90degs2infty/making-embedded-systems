@@ -8,6 +8,7 @@
 
 int main(void)
 {
+	printf("This is using cpp\n");
 	printf("Hello World! %s\n", CONFIG_BOARD);
 	return 0;
 }
