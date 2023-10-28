@@ -1,8 +1,8 @@
 [package]
-name = "test-app"
+authors = ["{{authors}}"]
+name = "{{project-name}}"
 edition = "2021"
 version = "0.1.0"
-authors = ["90degs2infty <90degs2infty@posteo.org>"]
 
 [dependencies]
 cortex-m = { version = "0.7", features = ["critical-section-single-core"] }
