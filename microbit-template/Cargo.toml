@@ -7,7 +7,7 @@ authors = ["90degs2infty <90degs2infty@posteo.org>"]
 [dependencies]
 cortex-m = { version = "0.7", features = ["critical-section-single-core"] }
 defmt = { version = "0.3", features = ["encoding-rzcobs"] }
-defmt-brtt = { version = "0.1", default-features = false, features = ["rtt"] }
+defmt-rtt = { version = "0.4" }
 panic-probe = { version = "0.3", features = ["print-defmt"] }
 rtic = { version = "2.0.1", features = [ "thumbv7-backend" ] }
 microbit-v2 = "0.13"
