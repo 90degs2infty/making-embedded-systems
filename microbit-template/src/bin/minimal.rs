@@ -4,13 +4,9 @@
 
 use test_app as _; // global logger + panicking-behavior + memory layout
 
-// TODO(7) Configure the `rtic::app` macro
 #[rtic::app(
-    // TODO: Replace `some_hal::pac` with the path to the PAC
-    device = some_hal::pac,
-    // TODO: Replace the `FreeInterrupt1, ...` with free interrupt vectors if software tasks are used
-    // You can usually find the names of the interrupt vectors in the some_hal::pac::interrupt enum.
-    dispatchers = [FreeInterrupt1, ...]
+    device = microbit::pac,
+    dispatchers = [SWI0_EGU0]
 )]
 mod app {
     // Shared resources go here
@@ -33,7 +29,6 @@ mod app {
         // let sysclk = { /* clock setup + returning sysclk as an u32 */ };
         // let token = rtic_monotonics::create_systick_token!();
         // rtic_monotonics::systick::Systick::new(cx.core.SYST, sysclk, token);
-
 
         task1::spawn().ok();
 
