@@ -37,6 +37,7 @@ mod app {
     enum Command {
         Help,
         ToggleDisplay,
+        LogBoard,
     }
 
     impl Command {
@@ -44,6 +45,7 @@ mod app {
             match self {
                 Command::Help => command_help::spawn().unwrap(),
                 Command::ToggleDisplay => command_toggle_display::spawn().unwrap(),
+                Command::LogBoard => command_log_board::spawn().unwrap(),
             }
         }
     }
@@ -55,6 +57,7 @@ mod app {
             match value {
                 b"help" => Ok(Command::Help),
                 b"toggle" => Ok(Command::ToggleDisplay),
+                b"log_board" => Ok(Command::LogBoard),
                 _ => Err("not a command"),
             }
         }
@@ -178,7 +181,8 @@ mod app {
                 available commands:\r\n\
                 \r\n\
                 help - prints this help message\r\n\
-                toggle - toggles the entire 5x5 LED matrix\r\n"
+                toggle - toggles the entire 5x5 LED matrix\r\n\
+                log_board - logs the entire game board to serial\r\n"
             )
             .unwrap();
 
@@ -214,5 +218,26 @@ mod app {
         toggle!(rows.row3);
         toggle!(rows.row4);
         toggle!(rows.row5);
+    }
+
+    #[task(priority = 1, shared = [ tx ])]
+    async fn command_log_board(mut cx: command_log_board::Context) {
+        defmt::trace!("Executing log board command");
+
+        cx.shared.tx.lock(|tx| {
+            write!(
+                tx,
+                "\r\n\
+                === board ===\r\n\
+                \r\n\
+                As of now, the engine has not been implemented\r\n\
+                so there is no board to log - I'm sorry :/\r\n\
+                \r\n\
+                =============\r\n"
+            )
+            .unwrap();
+
+            nb::block!(tx.flush()).unwrap();
+        });
     }
 }
