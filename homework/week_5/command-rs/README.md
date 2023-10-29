@@ -1,10 +1,19 @@
-# `micro:bit` template
+# `command-rs`
 
-A basic RTIC template targeting the `micro:bit v2` for usage throughout further assignments in this course.
+A basic commandline interface targeting the `micro:bit v2` running on the RTIC concurrency framework.
 
-Based on https://github.com/rtic-rs/defmt-app-template which is in turn based on https://github.com/knurling-rs/app-template
+## Requirements
 
-## Dependencies
+### Hardware
+
+A [`micro:bit v2`](https://microbit.org/).
+Note that this crate targets `v2` (as opposed to `v1`).
+
+### Software
+
+#### 0. `rust`
+
+See [the official installation guide](https://www.rust-lang.org/tools/install).
 
 #### 1. `flip-link`:
 
@@ -19,37 +28,50 @@ $ # make sure to install v0.2.0 or later
 $ cargo install probe-rs --features cli
 ```
 
-## Setup
+#### 3. `git`
 
-#### 1. Clone the project template
+This crate's build script uses `git` (via the `vergen` crate) to embed VCS information into the binary.
+Make sure the `git` executable is available in your `$PATH`.
 
-``` console
-$ cargo generate -g https://github.com/90degs2infty/making-embedded-systems.git microbit-template
+## Building
+
+```console
+$ cargo brb command
 ```
 
-#### 2. Run!
+## Running
 
-You are now all set to `cargo-run` your first `defmt`-powered application!
-There are some examples in the `src/bin` directory.
-
-Start by `cargo run`-ning `my-app/src/bin/minimal.rs`:
-
-``` console
-$ # `rb` is an alias for `run --bin`
-$ DEFMT_LOG=trace cargo rb minimal
-    Finished dev [optimized + debuginfo] target(s) in 0.03s
-flashing program ..
-DONE
-resetting device
-0.000000 INFO Hello, world!
-(..)
-
-$ echo $?
-0
+```console
+$ cargo rbb command
 ```
 
-[RA docs]: https://rust-analyzer.github.io/manual.html#configuration
-[rust-analyzer]: https://rust-analyzer.github.io/
+Note that this project has _two_ ways of logging to some commandline:
+
+- via RTT, for development purposes\
+  To make this available, make sure to build with `DEFMT_LOG=trace`, that is
+
+  ```console
+  $ DEFMT_LOG=trace cargo rbb command
+  ```
+
+- via UART, for "every day usage" (that is to solve the assignment)
+
+### Interacting with the target
+
+Run the target as described above.
+
+Then open a terminal emulator of your choice (`putty`, `minicom`, ...).
+Make sure to use a baud rate of `115200` and disable parity checking.
+E.g.
+
+```console
+$ minicom -D /dev/ttyACM0 -b 115200
+$ # inside the terminal
+$ help;
+```
+
+Commands have to be specified with a trailing `;`.
+Type `;` to clear your input on typos.
 
 ## License
 
@@ -61,23 +83,3 @@ Licensed under either of
 - MIT license ([LICENSE-MIT](LICENSE-MIT) or http://opensource.org/licenses/MIT)
 
 at your option.
-
-## Credits
-
-### Support
-
-`app-template` is part of the [Knurling] project, [Ferrous Systems]' effort at
-improving tooling used to develop for embedded systems.
-
-If you think that our work is useful, consider sponsoring it via [GitHub
-Sponsors].
-
-### Contribution
-
-Unless you explicitly state otherwise, any contribution intentionally submitted
-for inclusion in the work by you, as defined in the Apache-2.0 license, shall be
-licensed as above, without any additional terms or conditions.
-
-[Knurling]: https://knurling.ferrous-systems.com
-[Ferrous Systems]: https://ferrous-systems.com/
-[GitHub Sponsors]: https://github.com/sponsors/knurling-rs
