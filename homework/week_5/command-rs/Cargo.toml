@@ -10,9 +10,8 @@ defmt = { version = "0.3", features = ["encoding-rzcobs"] }
 defmt-rtt = { version = "0.4" }
 panic-probe = { version = "0.3", features = ["print-defmt"] }
 rtic = { version = "2.0.1", features = [ "thumbv7-backend" ] }
-microbit-v2 = "0.13"
-# TODO add a monotonic if you use scheduling
-# rtic-monotonics = { version = "1.0.0", features = [ "cortex-m-systick" ]}
+microbit-v2 = "0.13.0"
+rtic-monotonics = { version = "1.2.0", features = [ "nrf52833" ]}
 
 # cargo build/run
 [profile.dev]
