@@ -73,6 +73,23 @@ $ help;
 Commands have to be specified with a trailing `;`.
 Type `;` to clear your input on typos.
 
+## Known limitations
+
+Currently, there is loads of room for improvement.
+This includes (non-exhaustive list):
+
+- source code organization\
+  As of now, everything has been placed in one monolithic module.
+  Instead, dedicated single-purpose modules should be used.
+- error handling\
+  There are calls to `unwrap()` in quite some places.
+  This should be checked carefully and replaced by proper error handling where possible.
+- `async/await`\
+  In the invoker, there is a call to `Rtc0::delay()`.
+  The sole purpose is to mimic an `await` on the `rx.read()` call (which by design does not imply a `async/await` setting and instead returns an `Error::WouldBlock` if there is no data available).
+  Obviously, this is not how things should be done.
+  But since I have not had the time to look into implementing a corresponding `Future`, this is the current workaround.
+
 ## License
 
 Licensed under either of
