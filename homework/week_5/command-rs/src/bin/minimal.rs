@@ -15,12 +15,19 @@ mod app {
     use heapless::Vec;
     use microbit::{
         hal::{
+            gpio::{
+                p0::{P0_15, P0_19, P0_21, P0_22, P0_24},
+                Output, PushPull,
+            },
+            prelude::{OutputPin, StatefulOutputPin},
             uarte::{Baudrate, Parity, Pins, UarteRx, UarteTx},
             Uarte,
         },
         pac::UARTE0,
     };
     use rtic_monotonics::nrf::rtc::{ExtU64, Rtc0};
+
+    use nb::Error;
 
     const SERIAL_RX_BUF_SIZE: usize = 1;
     const SERIAL_TX_BUF_SIZE: usize = 256;
@@ -29,12 +36,14 @@ mod app {
 
     enum Command {
         Help,
+        ToggleDisplay,
     }
 
     impl Command {
         fn execute(self) {
             match self {
                 Command::Help => command_help::spawn().unwrap(),
+                Command::ToggleDisplay => command_toggle_display::spawn().unwrap(),
             }
         }
     }
@@ -45,9 +54,18 @@ mod app {
         fn try_from(value: &[u8]) -> Result<Self, Self::Error> {
             match value {
                 b"help" => Ok(Command::Help),
+                b"toggle" => Ok(Command::ToggleDisplay),
                 _ => Err("not a command"),
             }
         }
+    }
+
+    struct DisplayRows {
+        pub row1: P0_21<Output<PushPull>>,
+        pub row2: P0_22<Output<PushPull>>,
+        pub row3: P0_15<Output<PushPull>>,
+        pub row4: P0_24<Output<PushPull>>,
+        pub row5: P0_19<Output<PushPull>>,
     }
 
     #[shared]
@@ -59,6 +77,7 @@ mod app {
     #[local]
     struct Local {
         rx: UarteRx<UARTE0>,
+        rows: DisplayRows,
     }
 
     #[init(local = [ tx_buf: [u8; SERIAL_TX_BUF_SIZE] = [0u8; SERIAL_TX_BUF_SIZE], rx_buf: [u8; SERIAL_RX_BUF_SIZE] = [0u8; SERIAL_RX_BUF_SIZE] ])]
@@ -83,9 +102,24 @@ mod app {
         let token = rtic_monotonics::create_nrf_rtc0_monotonic_token!();
         Rtc0::start(board.RTC0, token);
 
+        let mut display = board.display_pins;
+        display.col1.set_low().unwrap();
+        display.col2.set_low().unwrap();
+        display.col3.set_low().unwrap();
+        display.col4.set_low().unwrap();
+        display.col5.set_low().unwrap();
+
+        let rows = DisplayRows {
+            row1: display.row1,
+            row2: display.row2,
+            row3: display.row3,
+            row4: display.row4,
+            row5: display.row5,
+        };
+
         command_client::spawn().ok();
 
-        (Shared { tx }, Local { rx })
+        (Shared { tx }, Local { rx, rows })
     }
 
     // Optional idle, can be removed if not needed.
@@ -143,10 +177,33 @@ mod app {
                 \r\n\
                 available commands:\r\n\
                 \r\n\
-                help - prints this help message\r\n"
+                help - prints this help message\r\n\
+                toggle - toggles the entire 5x5 LED matrix\r\n"
             )
             .unwrap();
             tx.flush().unwrap();
         });
+    }
+
+    macro_rules! toggle {
+        ( $pin:expr ) => {
+            if $pin.is_set_high().unwrap() {
+                $pin.set_low().unwrap()
+            } else {
+                $pin.set_high().unwrap()
+            }
+        };
+    }
+
+    #[task(priority = 1, local = [ rows ])]
+    async fn command_toggle_display(cx: command_toggle_display::Context) {
+        defmt::trace!("Executing toggle display command");
+
+        let rows = cx.local.rows;
+        toggle!(rows.row1);
+        toggle!(rows.row2);
+        toggle!(rows.row3);
+        toggle!(rows.row4);
+        toggle!(rows.row5);
     }
 }
