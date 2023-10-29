@@ -36,6 +36,7 @@ mod app {
         Help,
         ToggleDisplay,
         LogBoard,
+        Version,
     }
 
     impl Command {
@@ -44,6 +45,7 @@ mod app {
                 Command::Help => command_help::spawn().unwrap(),
                 Command::ToggleDisplay => command_toggle_display::spawn().unwrap(),
                 Command::LogBoard => command_log_board::spawn().unwrap(),
+                Command::Version => command_version::spawn().unwrap(),
             }
         }
     }
@@ -56,6 +58,7 @@ mod app {
                 b"help" => Ok(Command::Help),
                 b"toggle" => Ok(Command::ToggleDisplay),
                 b"log_board" => Ok(Command::LogBoard),
+                b"version" => Ok(Command::Version),
                 _ => Err("not a command"),
             }
         }
@@ -180,7 +183,10 @@ mod app {
                 \r\n\
                 help - prints this help message\r\n\
                 toggle - toggles the entire 5x5 LED matrix\r\n\
-                log_board - logs the entire game board to serial\r\n"
+                log_board - logs the entire game board to serial\r\n\
+                version - prints VCS information\r\n\
+                \r\n\
+                ==================\r\n"
             )
             .unwrap();
 
@@ -224,6 +230,23 @@ mod app {
                 so there is no board to log - I'm sorry :/\r\n\
                 \r\n\
                 =============\r\n"
+            )
+            .unwrap();
+
+            nb::block!(tx.flush()).unwrap();
+        });
+    }
+
+    #[task(priority = 1, shared = [ tx ])]
+    async fn command_version(mut cx: command_version::Context) {
+        defmt::trace!("Executing version command");
+
+        cx.shared.tx.lock(|tx| {
+            write!(
+                tx,
+                "\r\n\
+                This command-rs build is based on '{}'.\r\n",
+                env!("VERGEN_GIT_DESCRIBE")
             )
             .unwrap();
 

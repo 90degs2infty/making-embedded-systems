@@ -3,6 +3,7 @@ authors = ["90degs2infty <90degs2infty@posteo.org>"]
 name = "command-rs"
 edition = "2021"
 version = "0.1.0"
+build = "build.rs"
 
 [dependencies]
 cortex-m = { version = "0.7", features = ["critical-section-single-core"] }
@@ -15,6 +16,9 @@ rtic-monotonics = { version = "1.2.0", features = [ "nrf52833" ]}
 embedded-hal = { version = "0.2.7", features = [ "unproven" ]}
 nb = "1.1.0"
 heapless = "0.7.16"
+
+[build-dependencies]
+vergen = { version = "8.2.5", features = [ "git", "gitcl" ]}
 
 # cargo build/run
 [profile.dev]
