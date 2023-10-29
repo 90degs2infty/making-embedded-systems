@@ -1,6 +1,7 @@
 #![no_main]
 #![no_std]
 #![feature(type_alias_impl_trait)]
+#![allow(clippy::ignored_unit_patterns)]
 
 use command_rs as _; // global logger + panicking-behavior + memory layout
 
@@ -9,16 +10,18 @@ use command_rs as _; // global logger + panicking-behavior + memory layout
     dispatchers = [SWI0_EGU0]
 )]
 mod app {
+    use embedded_hal::serial::Read;
     use microbit::{
         hal::{
-            uarte::{Baudrate, Parity, Pins},
+            uarte::{Baudrate, Parity, Pins, UarteRx, UarteTx},
             Uarte,
         },
         pac::UARTE0,
     };
     use rtic_monotonics::nrf::rtc::{ExtU64, Rtc0};
 
-    const COMMAND_BUFFER_SIZE: usize = 8;
+    const SERIAL_RX_BUF_SIZE: usize = 1;
+    const SERIAL_TX_BUF_SIZE: usize = 256;
 
     // Shared resources go here
     #[shared]
@@ -29,10 +32,11 @@ mod app {
     // Local resources go here
     #[local]
     struct Local {
-        serial: Uarte<UARTE0>,
+        _tx: UarteTx<UARTE0>,
+        rx: UarteRx<UARTE0>,
     }
 
-    #[init]
+    #[init(local = [ tx_buf: [u8; SERIAL_TX_BUF_SIZE] = [0u8; SERIAL_TX_BUF_SIZE], rx_buf: [u8; SERIAL_RX_BUF_SIZE] = [0u8; SERIAL_RX_BUF_SIZE] ])]
     fn init(cx: init::Context) -> (Shared, Local) {
         defmt::info!("init");
 
@@ -40,12 +44,16 @@ mod app {
 
         let uart_pins = Pins::from(board.uart);
 
-        let uarte0 = Uarte::new(
+        let rx_buf = cx.local.rx_buf;
+
+        let (tx, rx) = Uarte::new(
             board.UARTE0,
             uart_pins,
             Parity::EXCLUDED,
             Baudrate::BAUD115200,
-        );
+        )
+        .split(&mut cx.local.tx_buf[..], rx_buf)
+        .unwrap();
 
         let token = rtic_monotonics::create_nrf_rtc0_monotonic_token!();
         Rtc0::start(board.RTC0, token);
@@ -56,7 +64,7 @@ mod app {
             Shared {
                 // Initialization of shared resources go here
             },
-            Local { serial: uarte0 },
+            Local { _tx: tx, rx },
         )
     }
 
@@ -65,33 +73,25 @@ mod app {
     fn idle(_: idle::Context) -> ! {
         defmt::info!("idle");
 
-        loop {
-            continue;
-        }
+        #[allow(clippy::empty_loop)]
+        loop {}
     }
 
-    #[task(priority = 1, local = [ serial ])]
+    #[task(priority = 1, local = [ rx ])]
     async fn command_client(cx: command_client::Context) {
         defmt::trace!("Starting client of command pattern.");
 
-        let mut buf = [0u8; COMMAND_BUFFER_SIZE];
-        let serial = cx.local.serial;
+        let rx = cx.local.rx;
 
         loop {
-            // Read COMMAND_BUFFER_SIZE bytes from serial blockingly
-            let bytes = match serial.read(&mut buf) {
-                // let bytes = match serial.read_timeout(&mut buf, timer, 1_000) {
-                Ok(()) => buf.len(),
-                _ => 0,
-            };
+            // Let the scheduler switch to a different task before reading (again)
+            Rtc0::delay(5.millis()).await;
 
-            if bytes > 0 {
-                defmt::trace!("Got '{}'", buf[..bytes]);
-                let _ = serial.write(&buf[..bytes]).unwrap();
+            match rx.read() {
+                Ok(byte) => defmt::trace!("Got {}", char::try_from(byte)),
+                // Err(nb::Error::WouldBlock) => continue,
+                _ => continue,
             }
-
-            // Let the scheduler switch to a different task before reading again
-            Rtc0::delay(5.millis()).await
         }
     }
 }
