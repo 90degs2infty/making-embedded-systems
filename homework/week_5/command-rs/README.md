@@ -73,6 +73,17 @@ $ help;
 Commands have to be specified with a trailing `;`.
 Type `;` to clear your input on typos.
 
+## The command pattern
+
+The commandline interface is build on top of the command pattern.
+
+For reference, here's a brief overview of how the parts discussed in "Making embedded systems" by Elecia White map to the source code:
+
+- _client_: the `TryFrom` implementation for the `Command` enum
+- _invoker_: the `command_invoker()` task
+- _command_: the `Command` enum alongside its `execute()` function
+- _receiver_: this depends on the specified command; e.g. for `Command::ToggleDisplay` this is the `DisplayRows` struct wrapped in `command_toggle_display`'s context.
+
 ## Known limitations
 
 Currently, there is loads of room for improvement.
