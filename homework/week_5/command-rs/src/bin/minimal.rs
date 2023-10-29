@@ -181,7 +181,16 @@ mod app {
                 toggle - toggles the entire 5x5 LED matrix\r\n"
             )
             .unwrap();
-            tx.flush().unwrap();
+
+            tx.flush()
+                .map_or_else(
+                    |e| match e {
+                        Error::WouldBlock => Ok(()),
+                        Error::Other(e) => Err(e),
+                    },
+                    |_| Ok(()),
+                )
+                .unwrap();
         });
     }
 
