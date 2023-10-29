@@ -121,7 +121,7 @@ mod app {
             row5: display.row5,
         };
 
-        command_client::spawn().ok();
+        command_invoker::spawn().ok();
 
         (Shared { tx }, Local { rx, rows })
     }
@@ -136,8 +136,8 @@ mod app {
     }
 
     #[task(priority = 1, local = [ rx ])]
-    async fn command_client(cx: command_client::Context) {
-        defmt::trace!("Starting client of command pattern.");
+    async fn command_invoker(cx: command_invoker::Context) {
+        defmt::trace!("Starting invoker of command pattern.");
 
         let rx = cx.local.rx;
 
