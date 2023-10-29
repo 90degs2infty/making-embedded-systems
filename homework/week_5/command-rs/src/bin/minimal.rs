@@ -186,15 +186,7 @@ mod app {
             )
             .unwrap();
 
-            tx.flush()
-                .map_or_else(
-                    |e| match e {
-                        Error::WouldBlock => Ok(()),
-                        Error::Other(e) => Err(e),
-                    },
-                    |_| Ok(()),
-                )
-                .unwrap();
+            nb::block!(tx.flush()).unwrap();
         });
     }
 
