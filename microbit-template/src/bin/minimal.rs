@@ -2,7 +2,7 @@
 #![no_std]
 #![feature(type_alias_impl_trait)]
 
-use test_app as _; // global logger + panicking-behavior + memory layout
+use {{crate_name}} as _; // global logger + panicking-behavior + memory layout
 
 #[rtic::app(
     device = microbit::pac,
