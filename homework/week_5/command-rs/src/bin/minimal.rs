@@ -10,8 +10,8 @@ use command_rs as _; // global logger + panicking-behavior + memory layout
     dispatchers = [SWI0_EGU0]
 )]
 mod app {
-    use core::convert::TryFrom;
-    use embedded_hal::serial::Read;
+    use core::{convert::TryFrom, fmt::Write};
+    use embedded_hal::serial::{Read, Write as EmbeddedWrite};
     use heapless::Vec;
     use microbit::{
         hal::{
@@ -24,6 +24,8 @@ mod app {
 
     const SERIAL_RX_BUF_SIZE: usize = 1;
     const SERIAL_TX_BUF_SIZE: usize = 256;
+
+    const COMMAND_BUF_SIZE: usize = 32;
 
     enum Command {
         Help,
@@ -42,7 +44,7 @@ mod app {
 
         fn try_from(value: &[u8]) -> Result<Self, Self::Error> {
             match value {
-                b"help;" => Ok(Command::Help),
+                b"help" => Ok(Command::Help),
                 _ => Err("not a command"),
             }
         }
@@ -51,7 +53,7 @@ mod app {
     #[shared]
     struct Shared {
         // Better make this local to one sender task which gets its workload from a queue
-        _tx: UarteTx<UARTE0>,
+        tx: UarteTx<UARTE0>,
     }
 
     #[local]
@@ -83,7 +85,7 @@ mod app {
 
         command_client::spawn().ok();
 
-        (Shared { _tx: tx }, Local { rx })
+        (Shared { tx }, Local { rx })
     }
 
     // Optional idle, can be removed if not needed.
@@ -101,7 +103,7 @@ mod app {
 
         let rx = cx.local.rx;
 
-        let mut buf = Vec::<u8, 128>::new();
+        let mut buf = Vec::<u8, COMMAND_BUF_SIZE>::new();
 
         loop {
             // Let the scheduler switch to a different task before reading (again)
@@ -126,8 +128,25 @@ mod app {
         }
     }
 
-    #[task(priority = 1)]
-    async fn command_help(_: command_help::Context) {
-        defmt::trace!("Executing help command")
+    #[task(priority = 1, shared = [ tx ])]
+    async fn command_help(mut cx: command_help::Context) {
+        defmt::trace!("Executing help command");
+
+        cx.shared.tx.lock(|tx| {
+            write!(
+                tx,
+                "\r\n\
+                === command-rs ===\r\n\
+                \r\n\
+                This is my take at week 5's assignment of the\r\n\
+                Making embedded systems course (2023 edition).\r\n\
+                \r\n\
+                available commands:\r\n\
+                \r\n\
+                help - prints this help message\r\n"
+            )
+            .unwrap();
+            tx.flush().unwrap();
+        });
     }
 }
