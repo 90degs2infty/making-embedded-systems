@@ -10,7 +10,9 @@ use command_rs as _; // global logger + panicking-behavior + memory layout
     dispatchers = [SWI0_EGU0]
 )]
 mod app {
+    use core::convert::TryFrom;
     use embedded_hal::serial::Read;
+    use heapless::Vec;
     use microbit::{
         hal::{
             uarte::{Baudrate, Parity, Pins, UarteRx, UarteTx},
@@ -23,16 +25,37 @@ mod app {
     const SERIAL_RX_BUF_SIZE: usize = 1;
     const SERIAL_TX_BUF_SIZE: usize = 256;
 
-    // Shared resources go here
-    #[shared]
-    struct Shared {
-        // TODO: Add resources
+    enum Command {
+        Help,
     }
 
-    // Local resources go here
+    impl Command {
+        fn execute(self) {
+            match self {
+                Command::Help => command_help::spawn().unwrap(),
+            }
+        }
+    }
+
+    impl TryFrom<&[u8]> for Command {
+        type Error = &'static str;
+
+        fn try_from(value: &[u8]) -> Result<Self, Self::Error> {
+            match value {
+                b"help;" => Ok(Command::Help),
+                _ => Err("not a command"),
+            }
+        }
+    }
+
+    #[shared]
+    struct Shared {
+        // Better make this local to one sender task which gets its workload from a queue
+        _tx: UarteTx<UARTE0>,
+    }
+
     #[local]
     struct Local {
-        _tx: UarteTx<UARTE0>,
         rx: UarteRx<UARTE0>,
     }
 
@@ -60,12 +83,7 @@ mod app {
 
         command_client::spawn().ok();
 
-        (
-            Shared {
-                // Initialization of shared resources go here
-            },
-            Local { _tx: tx, rx },
-        )
+        (Shared { _tx: tx }, Local { rx })
     }
 
     // Optional idle, can be removed if not needed.
@@ -83,15 +101,33 @@ mod app {
 
         let rx = cx.local.rx;
 
+        let mut buf = Vec::<u8, 128>::new();
+
         loop {
             // Let the scheduler switch to a different task before reading (again)
             Rtc0::delay(5.millis()).await;
 
-            match rx.read() {
-                Ok(byte) => defmt::trace!("Got {}", char::try_from(byte)),
-                // Err(nb::Error::WouldBlock) => continue,
-                _ => continue,
+            if let Ok(byte) = rx.read() {
+                defmt::trace!("Received '{}' via UART", char::try_from(byte));
+                if byte == b';' {
+                    if let Ok(cmd) = Command::try_from(buf.as_slice()) {
+                        cmd.execute();
+                    }
+                    buf.clear();
+                } else {
+                    if buf.is_full() {
+                        defmt::trace!("Clearing buffer due to overflow and no command detected");
+                        buf.clear();
+                    }
+
+                    buf.push(byte).unwrap();
+                }
             }
         }
+    }
+
+    #[task(priority = 1)]
+    async fn command_help(_: command_help::Context) {
+        defmt::trace!("Executing help command")
     }
 }
