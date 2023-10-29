@@ -27,8 +27,6 @@ mod app {
     };
     use rtic_monotonics::nrf::rtc::{ExtU64, Rtc0};
 
-    use nb::Error;
-
     const SERIAL_RX_BUF_SIZE: usize = 1;
     const SERIAL_TX_BUF_SIZE: usize = 256;
 
