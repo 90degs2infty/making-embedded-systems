@@ -12,6 +12,8 @@ use week_8 as _; // global logger + panicking-behavior + memory layout
     dispatchers = [SWI0_EGU0]
 )]
 mod app {
+    use core::mem::MaybeUninit;
+
     // Shared resources go here
     #[shared]
     struct Shared {
@@ -23,6 +25,9 @@ mod app {
     struct Local {
         // TODO: Add resources
     }
+
+    static mut static_mut_initialized: u8 = 42;
+    static mut static_mut_uninitialized: MaybeUninit<u8> = MaybeUninit::uninit();
 
     macro_rules! get_dunder {
         ($dst:ident, $src:ident) => {
@@ -124,6 +129,14 @@ mod app {
         defmt::info!("euninit '0x{:x}'", euninit);
 
         defmt::info!("sheap '0x{:x}'", sheap);
+
+        defmt::info!("static_mut_initialized '0x{:x}'", unsafe {
+            &static_mut_initialized as *const _ as usize
+        });
+
+        defmt::info!("static_mut_uninitialized '0x{:x}'", unsafe {
+            &static_mut_uninitialized as *const _ as usize
+        });
 
         (
             Shared {
