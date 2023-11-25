@@ -1,6 +1,9 @@
 #![no_main]
 #![no_std]
 #![feature(type_alias_impl_trait)]
+#![warn(clippy::all)]
+#![warn(clippy::pedantic)]
+#![allow(clippy::ignored_unit_patterns)]
 
 use week_8 as _; // global logger + panicking-behavior + memory layout
 
@@ -22,7 +25,7 @@ mod app {
     }
 
     #[init]
-    fn init(cx: init::Context) -> (Shared, Local) {
+    fn init(_cx: init::Context) -> (Shared, Local) {
         defmt::info!("init");
 
         // TODO setup monotonic if used
@@ -47,9 +50,8 @@ mod app {
     fn idle(_: idle::Context) -> ! {
         defmt::info!("idle");
 
-        loop {
-            continue;
-        }
+        #[allow(clippy::empty_loop)]
+        loop {}
     }
 
     // TODO: Add tasks
