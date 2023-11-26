@@ -1,0 +1,787 @@
+     VMA      LMA     Size Align Out     In      Symbol
+       0        0        0     1 PROVIDE ( NonMaskableInt = DefaultHandler )
+       0        0        0     1 PROVIDE ( MemoryManagement = DefaultHandler )
+       0        0        0     1 PROVIDE ( BusFault = DefaultHandler )
+       0        0        0     1 PROVIDE ( UsageFault = DefaultHandler )
+       0        0        0     1 PROVIDE ( SVCall = DefaultHandler )
+       0        0        0     1 PROVIDE ( DebugMonitor = DefaultHandler )
+       0        0        0     1 PROVIDE ( PendSV = DefaultHandler )
+       0        0        0     1 PROVIDE ( SysTick = DefaultHandler )
+       0        0        0     1 PROVIDE ( DefaultHandler = DefaultHandler_ )
+       0        0        0     1 PROVIDE ( HardFault = HardFault_ )
+       0        0        0     1 PROVIDE ( __pre_init = DefaultPreInit )
+       0        0        0     1 PROVIDE ( _stack_start = ORIGIN ( RAM ) + LENGTH ( RAM ) )
+       0        0      100     4 .vector_table
+       0        0        0     1         __vector_table = .
+       0        0        4     1         LONG ( _stack_start & 0xFFFFFFF8 )
+       4        4        4     4         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libcortex_m_rt-780547e9ed694db2.rlib(cortex_m_rt-780547e9ed694db2.cortex_m_rt.8fb7b1059c3df9f2-cgu.0.rcgu.o):(.vector_table.reset_vector)
+       4        4        4     1                 __RESET_VECTOR
+       8        8        0     1         __reset_vector = .
+       8        8       38     4         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libcortex_m_rt-780547e9ed694db2.rlib(cortex_m_rt-780547e9ed694db2.cortex_m_rt.8fb7b1059c3df9f2-cgu.0.rcgu.o):(.vector_table.exceptions)
+       8        8       38     1                 __EXCEPTIONS
+      40       40        0     1         __eexceptions = .
+      40       40       c0     4         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libnrf52833_pac-d59632473348dc8c.rlib(nrf52833_pac-d59632473348dc8c.nrf52833_pac.b6f3baf0a8d66882-cgu.0.rcgu.o):(.vector_table.interrupts)
+      40       40       c0     1                 __INTERRUPTS
+     100      100        0     1 PROVIDE ( _stext = ADDR ( .vector_table ) + SIZEOF ( .vector_table ) )
+     100      100     1dbc     4 .text
+     100      100        0     1         __stext = .
+     100      100       58     4         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libcortex_m_rt-780547e9ed694db2.rlib(cortex_m_rt-780547e9ed694db2.cortex_m_rt.8fb7b1059c3df9f2-cgu.0.rcgu.o):(.Reset)
+     100      100        0     1                 $t.1
+     101      101       3e     1                 Reset
+     140      140        0     1                 $d.8
+     158      158        4     2         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/minimal-7fa1b75cbed8b92e.minimal.1d6004855a026a85-cgu.0.rcgu.o:(.text._ZN8cortex_m9interrupt7disable17h228623f55521b427E)
+     158      158        0     1                 $t.0
+     159      159        4     1                 cortex_m::interrupt::disable::h228623f55521b427
+     15c      15c       26     2         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/minimal-7fa1b75cbed8b92e.minimal.1d6004855a026a85-cgu.0.rcgu.o:(.text._ZN7minimal3app4idle17hd158bdab5ae05274E)
+     15c      15c        0     1                 $t.1
+     15d      15d       26     1                 minimal::app::idle::hd158bdab5ae05274
+     182      182       1e     2         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/minimal-7fa1b75cbed8b92e.minimal.1d6004855a026a85-cgu.0.rcgu.o:(.text.main)
+     182      182        0     1                 $t.2
+     183      183       1e     1                 main
+     1a0      1a0      4e2     2         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/minimal-7fa1b75cbed8b92e.minimal.1d6004855a026a85-cgu.0.rcgu.o:(.text._ZN7minimal3app4main21__rtic_init_resources17h5f818533fb8ca190E)
+     1a0      1a0        0     1                 $t.3
+     1a1      1a1      4e2     1                 minimal::app::main::__rtic_init_resources::h5f818533fb8ca190
+     682      682       3a     2         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libweek_8-7985e4d478007155.rlib(week_8-7985e4d478007155.week_8.aa6fa5cee2670455-cgu.0.rcgu.o):(.text._defmt_timestamp)
+     682      682        0     1                 $t.3
+     683      683       3a     1                 _defmt_timestamp
+     6bc      6bc        2     2         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libcortex_m_rt-780547e9ed694db2.rlib(cortex_m_rt-780547e9ed694db2.cortex_m_rt.8fb7b1059c3df9f2-cgu.0.rcgu.o):(.text.DefaultHandler_)
+     6bc      6bc        0     1                 $t.6
+     6bd      6bd        2     1                 DefaultHandler_
+     6be      6be        2     2         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libcortex_m_rt-780547e9ed694db2.rlib(cortex_m_rt-780547e9ed694db2.cortex_m_rt.8fb7b1059c3df9f2-cgu.0.rcgu.o):(.text.DefaultPreInit)
+     6be      6be        0     1                 $t.7
+     6bf      6bf        2     1                 DefaultPreInit
+     6c0      6c0        6     2         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libpanic_probe-584f6a71cdc40dc3.rlib(panic_probe-584f6a71cdc40dc3.panic_probe.7cb8b6e285d7486e-cgu.0.rcgu.o):(.text._ZN44_$LT$$RF$T$u20$as$u20$core..fmt..Display$GT$3fmt17h20c85e5b90e0a07cE)
+     6c0      6c0        0     1                 $t.0
+     6c1      6c1        6     1                 _$LT$$RF$T$u20$as$u20$core..fmt..Display$GT$::fmt::h20c85e5b90e0a07c
+     6c6      6c6        2     2         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libpanic_probe-584f6a71cdc40dc3.rlib(panic_probe-584f6a71cdc40dc3.panic_probe.7cb8b6e285d7486e-cgu.0.rcgu.o):(.text._ZN4core3ptr59drop_in_place$LT$$RF$core..panic..panic_info..PanicInfo$GT$17h416f4b3696e99ab2E)
+     6c6      6c6        0     1                 $t.1
+     6c7      6c7        2     1                 core::ptr::drop_in_place$LT$$RF$core..panic..panic_info..PanicInfo$GT$::h416f4b3696e99ab2
+     6c8      6c8       32     2         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libpanic_probe-584f6a71cdc40dc3.rlib(panic_probe-584f6a71cdc40dc3.panic_probe.7cb8b6e285d7486e-cgu.0.rcgu.o):(.text._ZN5defmt6export3fmt17hdf5cc97bdd6a686eE)
+     6c8      6c8        0     1                 $t.2
+     6c9      6c9       32     1                 defmt::export::fmt::hdf5cc97bdd6a686e
+     6fa      6fa        a     2         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libpanic_probe-584f6a71cdc40dc3.rlib(panic_probe-584f6a71cdc40dc3.panic_probe.7cb8b6e285d7486e-cgu.0.rcgu.o):(.text._ZN8cortex_m3asm3udf17hed8ba3e682f02231E)
+     6fa      6fa        0     1                 $t.5
+     6fb      6fb        a     1                 cortex_m::asm::udf::hed8ba3e682f02231
+     704      704       48     2         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libpanic_probe-584f6a71cdc40dc3.rlib(panic_probe-584f6a71cdc40dc3.panic_probe.7cb8b6e285d7486e-cgu.0.rcgu.o):(.text.rust_begin_unwind)
+     704      704        0     1                 $t.6
+     705      705       48     1                 rust_begin_unwind
+     74c      74c       1a     2         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libpanic_probe-584f6a71cdc40dc3.rlib(panic_probe-584f6a71cdc40dc3.panic_probe.7cb8b6e285d7486e-cgu.0.rcgu.o):(.text._ZN11panic_probe10hard_fault17hacfa87f504aee0e0E)
+     74c      74c        0     1                 $t.7
+     74d      74d       1a     1                 panic_probe::hard_fault::hacfa87f504aee0e0
+     766      766       16     2         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libcortex_m-e939a13fc425b469.rlib(cortex_m-e939a13fc425b469.cortex_m.514a0b5a766fa541-cgu.0.rcgu.o):(.text._ZN126_$LT$cortex_m..critical_section..single_core_critical_section..SingleCoreCriticalSection$u20$as$u20$critical_section..Impl$GT$7acquire17hff37579346022959E)
+     766      766        0     1                 $t.2
+     767      767       16     1                 _$LT$cortex_m..critical_section..single_core_critical_section..SingleCoreCriticalSection$u20$as$u20$critical_section..Impl$GT$::acquire::hff37579346022959
+     767      767       16     1                 _critical_section_1_0_acquire
+     77c      77c        a     2         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libcortex_m-e939a13fc425b469.rlib(cortex_m-e939a13fc425b469.cortex_m.514a0b5a766fa541-cgu.0.rcgu.o):(.text._critical_section_1_0_release)
+     77c      77c        0     1                 $t.8
+     77d      77d        a     1                 _critical_section_1_0_release
+     786      786        4     2         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libcortex_m-e939a13fc425b469.rlib(bin/thumbv7em-none-eabihf.o):(.text.__cpsid)
+     786      786        0     1                 $t.3
+     787      787        4     1                 __cpsid
+     78a      78a        4     2         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libcortex_m-e939a13fc425b469.rlib(bin/thumbv7em-none-eabihf.o):(.text.__cpsie)
+     78a      78a        0     1                 $t.4
+     78b      78b        4     1                 __cpsie
+     78e      78e        6     2         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libcortex_m-e939a13fc425b469.rlib(bin/thumbv7em-none-eabihf.o):(.text.__primask_r)
+     78e      78e        0     1                 $t.12
+     78f      78f        6     1                 __primask_r
+     794      794        4     2         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libcortex_m-e939a13fc425b469.rlib(bin/thumbv7em-none-eabihf.o):(.text.__udf)
+     794      794        0     1                 $t.16
+     795      795        4     1                 __udf
+     798      798       6a     2         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt_rtt-0cd705c6c56326f2.rlib(defmt_rtt-0cd705c6c56326f2.defmt_rtt.655f672f2965888c-cgu.0.rcgu.o):(.text._ZN5defmt8encoding5inner7Encoder11start_frame17h67d96a9b843c59a4E)
+     798      798        0     1                 $t.1
+     799      799       6a     1                 defmt::encoding::inner::Encoder::start_frame::h67d96a9b843c59a4
+     802      802      216     2         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt_rtt-0cd705c6c56326f2.rlib(defmt_rtt-0cd705c6c56326f2.defmt_rtt.655f672f2965888c-cgu.0.rcgu.o):(.text._ZN5defmt8encoding5inner7Encoder5write17h50b34852cf5c0352E)
+     802      802        0     1                 $t.2
+     803      803      216     1                 defmt::encoding::inner::Encoder::write::h50b34852cf5c0352
+     a18      a18       da     2         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt_rtt-0cd705c6c56326f2.rlib(defmt_rtt-0cd705c6c56326f2.defmt_rtt.655f672f2965888c-cgu.0.rcgu.o):(.text._ZN5defmt8encoding5inner7Encoder9end_frame17hadda082352a1c0d5E)
+     a18      a18        0     1                 $t.3
+     a19      a19       da     1                 defmt::encoding::inner::Encoder::end_frame::hadda082352a1c0d5
+     af2      af2       80     2         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt_rtt-0cd705c6c56326f2.rlib(defmt_rtt-0cd705c6c56326f2.defmt_rtt.655f672f2965888c-cgu.0.rcgu.o):(.text._ZN9defmt_rtt7channel7Channel14blocking_write17h179a6a14e4ca0fb8E)
+     af2      af2        0     1                 $t.7
+     af3      af3       80     1                 defmt_rtt::channel::Channel::blocking_write::h179a6a14e4ca0fb8
+     b72      b72       1c     2         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt_rtt-0cd705c6c56326f2.rlib(defmt_rtt-0cd705c6c56326f2.defmt_rtt.655f672f2965888c-cgu.0.rcgu.o):(.text._ZN9defmt_rtt7channel7Channel17nonblocking_write17hb4f075bd8bf6d505E)
+     b72      b72        0     1                 $t.8
+     b73      b73       1c     1                 defmt_rtt::channel::Channel::nonblocking_write::hb4f075bd8bf6d505
+     b8e      b8e       aa     2         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt_rtt-0cd705c6c56326f2.rlib(defmt_rtt-0cd705c6c56326f2.defmt_rtt.655f672f2965888c-cgu.0.rcgu.o):(.text._ZN9defmt_rtt7channel7Channel10write_impl17h2fe7c034790117c2E)
+     b8e      b8e        0     1                 $t.9
+     b8f      b8f       aa     1                 defmt_rtt::channel::Channel::write_impl::h2fe7c034790117c2
+     c38      c38       64     2         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt_rtt-0cd705c6c56326f2.rlib(defmt_rtt-0cd705c6c56326f2.defmt_rtt.655f672f2965888c-cgu.0.rcgu.o):(.text._ZN59_$LT$defmt_rtt..Logger$u20$as$u20$defmt..traits..Logger$GT$7acquire17h6f74fff94a7acd1dE)
+     c38      c38        0     1                 $t.10
+     c39      c39       64     1                 _$LT$defmt_rtt..Logger$u20$as$u20$defmt..traits..Logger$GT$::acquire::h6f74fff94a7acd1d
+     c9c      c9c        4     2         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt_rtt-0cd705c6c56326f2.rlib(defmt_rtt-0cd705c6c56326f2.defmt_rtt.655f672f2965888c-cgu.0.rcgu.o):(.text._defmt_acquire)
+     c9c      c9c        0     1                 $t.14
+     c9d      c9d        4     1                 _defmt_acquire
+     ca0      ca0       2e     2         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt_rtt-0cd705c6c56326f2.rlib(defmt_rtt-0cd705c6c56326f2.defmt_rtt.655f672f2965888c-cgu.0.rcgu.o):(.text._defmt_release)
+     ca0      ca0        0     1                 $t.16
+     ca1      ca1       2e     1                 _defmt_release
+     cce      cce       10     2         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt_rtt-0cd705c6c56326f2.rlib(defmt_rtt-0cd705c6c56326f2.defmt_rtt.655f672f2965888c-cgu.0.rcgu.o):(.text._defmt_write)
+     cce      cce        0     1                 $t.17
+     ccf      ccf       10     1                 _defmt_write
+     cde      cde        8     2         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt-139d11b2598a2e3b.rlib(defmt-139d11b2598a2e3b.defmt.4c8197b8be145e5b-cgu.0.rcgu.o):(.text._ZN42_$LT$$RF$T$u20$as$u20$core..fmt..Debug$GT$3fmt17h48d2ec79e50e2294E)
+     cde      cde        0     1                 $t.0
+     cdf      cdf        8     1                 _$LT$$RF$T$u20$as$u20$core..fmt..Debug$GT$::fmt::h48d2ec79e50e2294
+     cdf      cdf        8     1                 _$LT$$RF$T$u20$as$u20$core..fmt..Display$GT$::fmt::hcb12de6bfb8c80c7
+     ce6      ce6       8e     2         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt-139d11b2598a2e3b.rlib(defmt-139d11b2598a2e3b.defmt.4c8197b8be145e5b-cgu.0.rcgu.o):(.text._ZN4core3fmt5Write10write_char17h410e8e28a276e162E)
+     ce6      ce6        0     1                 $t.1
+     ce7      ce7       8e     1                 core::fmt::Write::write_char::h410e8e28a276e162
+     d74      d74        e     2         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt-139d11b2598a2e3b.rlib(defmt-139d11b2598a2e3b.defmt.4c8197b8be145e5b-cgu.0.rcgu.o):(.text._ZN4core3fmt5Write9write_fmt17h0bb402b368daa58eE)
+     d74      d74        0     1                 $t.2
+     d75      d75        e     1                 core::fmt::Write::write_fmt::h0bb402b368daa58e
+     d82      d82        2     2         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt-139d11b2598a2e3b.rlib(defmt-139d11b2598a2e3b.defmt.4c8197b8be145e5b-cgu.0.rcgu.o):(.text._ZN4core3ptr44drop_in_place$LT$defmt..export..FmtWrite$GT$17h105e34c19ce8b018E)
+     d82      d82        0     1                 $t.3
+     d83      d83        2     1                 core::ptr::drop_in_place$LT$defmt..export..FmtWrite$GT$::h105e34c19ce8b018
+     d84      d84        2     2         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt-139d11b2598a2e3b.rlib(defmt-139d11b2598a2e3b.defmt.4c8197b8be145e5b-cgu.0.rcgu.o):(.text._ZN5defmt6export9make_istr17h333b1419448ee465E)
+     d84      d84        0     1                 $t.8
+     d85      d85        2     1                 defmt::export::make_istr::h333b1419448ee465
+     d85      d85        2     1                 _$LT$u16$u20$as$u20$defmt..export..traits..Truncate$LT$u16$GT$$GT$::truncate::h55fd465494e07cb8
+     d86      d86       2e     2         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt-139d11b2598a2e3b.rlib(defmt-139d11b2598a2e3b.defmt.4c8197b8be145e5b-cgu.0.rcgu.o):(.text._ZN5defmt6export3fmt17he14ce8a87621466fE)
+     d86      d86        0     1                 $t.10
+     d87      d87       2e     1                 defmt::export::fmt::he14ce8a87621466f
+     db4      db4       16     2         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt-139d11b2598a2e3b.rlib(defmt-139d11b2598a2e3b.defmt.4c8197b8be145e5b-cgu.0.rcgu.o):(.text._ZN5defmt6export3f3217hc312bd03395694b2E)
+     db4      db4        0     1                 $t.11
+     db5      db5       16     1                 defmt::export::f32::hc312bd03395694b2
+     db5      db5       16     1                 defmt::export::integers::usize::hd15ae9dd6b3b93d0
+     db5      db5       16     1                 defmt::export::integers::isize::hc51e4ad7a783285c
+     db5      db5       16     1                 defmt::export::integers::u32::h646fbee6770e78be
+     db5      db5       16     1                 defmt::export::integers::i32::h5c94d96ee5da3656
+     dca      dca       18     2         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt-139d11b2598a2e3b.rlib(defmt-139d11b2598a2e3b.defmt.4c8197b8be145e5b-cgu.0.rcgu.o):(.text._ZN5defmt6export4istr17h653c17e93340ccbeE)
+     dca      dca        0     1                 $t.16
+     dcb      dcb       18     1                 defmt::export::istr::h653c17e93340ccbe
+     dcb      dcb       18     1                 defmt::export::integers::u16::h7dc3101d8ea7ae06
+     dcb      dcb       18     1                 defmt::export::integers::i16::h6781315e2ccb915a
+     de2      de2       52     2         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt-139d11b2598a2e3b.rlib(defmt-139d11b2598a2e3b.defmt.4c8197b8be145e5b-cgu.0.rcgu.o):(.text._ZN5defmt6export5debug17hfba8adbc57190a91E)
+     de2      de2        0     1                 $t.18
+     de3      de3       52     1                 defmt::export::debug::hfba8adbc57190a91
+     de3      de3       52     1                 defmt::export::display::hf935738cea3d882f
+     e34      e34       1c     2         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt-139d11b2598a2e3b.rlib(defmt-139d11b2598a2e3b.defmt.4c8197b8be145e5b-cgu.0.rcgu.o):(.text._ZN5defmt6export6header17h2c286621e3eca4f7E)
+     e34      e34        0     1                 $t.19
+     e35      e35       1c     1                 defmt::export::header::h2c286621e3eca4f7
+     e50      e50       10     2         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt-139d11b2598a2e3b.rlib(defmt-139d11b2598a2e3b.defmt.4c8197b8be145e5b-cgu.0.rcgu.o):(.text._ZN60_$LT$defmt..export..FmtWrite$u20$as$u20$core..fmt..Write$GT$9write_str17hff20aed1c0e27af4E)
+     e50      e50        0     1                 $t.20
+     e51      e51       10     1                 _$LT$defmt..export..FmtWrite$u20$as$u20$core..fmt..Write$GT$::write_str::hff20aed1c0e27af4
+     e60      e60        2     2         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt-139d11b2598a2e3b.rlib(defmt-139d11b2598a2e3b.defmt.4c8197b8be145e5b-cgu.0.rcgu.o):(.text.__defmt_default_timestamp)
+     e60      e60        0     1                 $t.28
+     e61      e61        2     1                 __defmt_default_timestamp
+     e62      e62       1c     2         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt-139d11b2598a2e3b.rlib(defmt-139d11b2598a2e3b.defmt.4c8197b8be145e5b-cgu.0.rcgu.o):(.text.__defmt_default_panic)
+     e62      e62        0     1                 $t.29
+     e63      e63       1c     1                 __defmt_default_panic
+     e7e      e7e        4     2         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcore-4dd3ced510320132.rlib(core-4dd3ced510320132.core.f4d53ecc79b85055-cgu.0.rcgu.o):(.text._ZN4core3ops8function6FnOnce9call_once17hc758fc1db956f230E)
+     e7e      e7e        0     1                 $t.0
+     e7f      e7f        4     1                 core::ops::function::FnOnce::call_once::hc758fc1db956f230
+     e82      e82        2     2         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcore-4dd3ced510320132.rlib(core-4dd3ced510320132.core.f4d53ecc79b85055-cgu.0.rcgu.o):(.text._ZN4core3ptr37drop_in_place$LT$core..fmt..Error$GT$17hf2f6400742d5a5dcE)
+     e82      e82        0     1                 $t.5
+     e83      e83        2     1                 core::ptr::drop_in_place$LT$core..fmt..Error$GT$::hf2f6400742d5a5dc
+     e84      e84       22     2         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcore-4dd3ced510320132.rlib(core-4dd3ced510320132.core.f4d53ecc79b85055-cgu.0.rcgu.o):(.text._ZN36_$LT$T$u20$as$u20$core..any..Any$GT$7type_id17h16700f0c7f41fd7bE)
+     e84      e84        0     1                 $t.101
+     e85      e85       22     1                 _$LT$T$u20$as$u20$core..any..Any$GT$::type_id::h16700f0c7f41fd7b
+     ea6      ea6      138     2         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcore-4dd3ced510320132.rlib(core-4dd3ced510320132.core.f4d53ecc79b85055-cgu.0.rcgu.o):(.text._ZN73_$LT$core..panic..panic_info..PanicInfo$u20$as$u20$core..fmt..Display$GT$3fmt17hac4cd802e6502851E)
+     ea6      ea6        0     1                 $t.223
+     ea7      ea7      138     1                 _$LT$core..panic..panic_info..PanicInfo$u20$as$u20$core..fmt..Display$GT$::fmt::hac4cd802e6502851
+     fde      fde       2c     2         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcore-4dd3ced510320132.rlib(core-4dd3ced510320132.core.f4d53ecc79b85055-cgu.0.rcgu.o):(.text.unlikely._ZN4core9panicking9panic_fmt17haff747062b9a5d7bE)
+     fde      fde        0     1                 $t.224
+     fdf      fdf       2c     1                 core::panicking::panic_fmt::haff747062b9a5d7b
+    100a     100a       2e     2         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcore-4dd3ced510320132.rlib(core-4dd3ced510320132.core.f4d53ecc79b85055-cgu.0.rcgu.o):(.text.unlikely._ZN4core9panicking5panic17h904e2cb6fe672a9bE)
+    100a     100a        0     1                 $t.226
+    100b     100b       2e     1                 core::panicking::panic::h904e2cb6fe672a9b
+    1038     1038      18a     2         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcore-4dd3ced510320132.rlib(core-4dd3ced510320132.core.f4d53ecc79b85055-cgu.0.rcgu.o):(.text._ZN4core3fmt5write17hc75ab65235de17c2E)
+    1038     1038        0     1                 $t.281
+    1039     1039      18a     1                 core::fmt::write::hc75ab65235de17c2
+    11c4     11c4      2c0     4         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcore-4dd3ced510320132.rlib(core-4dd3ced510320132.core.f4d53ecc79b85055-cgu.0.rcgu.o):(.text._ZN4core3fmt9Formatter12pad_integral17h6f49a8fd97b135cfE)
+    11c4     11c4        0     1                 $t.282
+    11c5     11c5      2c0     1                 core::fmt::Formatter::pad_integral::h6f49a8fd97b135cf
+    12ba     12ba        0     1                 $d.283
+    12be     12be        0     1                 $t.284
+    1484     1484       46     2         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcore-4dd3ced510320132.rlib(core-4dd3ced510320132.core.f4d53ecc79b85055-cgu.0.rcgu.o):(.text._ZN4core3fmt9Formatter12pad_integral12write_prefix17h6e9dd209844ff8bdE)
+    1484     1484        0     1                 $t.285
+    1485     1485       46     1                 core::fmt::Formatter::pad_integral::write_prefix::h6e9dd209844ff8bd
+    14cc     14cc      26e     4         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcore-4dd3ced510320132.rlib(core-4dd3ced510320132.core.f4d53ecc79b85055-cgu.0.rcgu.o):(.text._ZN4core3fmt9Formatter3pad17h38a5d6d572cace48E)
+    14cc     14cc        0     1                 $t.286
+    14cd     14cd      26e     1                 core::fmt::Formatter::pad::h38a5d6d572cace48
+    16b0     16b0        0     1                 $d.287
+    16b4     16b4        0     1                 $t.288
+    173a     173a       40     2         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcore-4dd3ced510320132.rlib(core-4dd3ced510320132.core.f4d53ecc79b85055-cgu.0.rcgu.o):(.text.unlikely._ZN4core5slice5index26slice_start_index_len_fail17he07d5ed2c47e41c3E)
+    173a     173a        0     1                 $t.346
+    173b     173b       40     1                 core::slice::index::slice_start_index_len_fail::he07d5ed2c47e41c3
+    177a     177a      4d8     2         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcore-4dd3ced510320132.rlib(core-4dd3ced510320132.core.f4d53ecc79b85055-cgu.0.rcgu.o):(.text._ZN4core3str5count14do_count_chars17h7034b5263c653393E)
+    177a     177a        0     1                 $t.359
+    177b     177b      4d8     1                 core::str::count::do_count_chars::h7034b5263c653393
+    1c52     1c52       f4     2         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcore-4dd3ced510320132.rlib(core-4dd3ced510320132.core.f4d53ecc79b85055-cgu.0.rcgu.o):(.text._ZN4core3fmt3num3imp52_$LT$impl$u20$core..fmt..Display$u20$for$u20$u32$GT$3fmt17hcb2cf3a9a081c16bE)
+    1c52     1c52        0     1                 $t.662
+    1c53     1c53       f4     1                 core::fmt::num::imp::_$LT$impl$u20$core..fmt..Display$u20$for$u20$u32$GT$::fmt::hcb2cf3a9a081c16b
+    1c53     1c53       f4     1                 core::fmt::num::imp::_$LT$impl$u20$core..fmt..Display$u20$for$u20$usize$GT$::fmt::hf7f366d0048a819e
+    1d46     1d46        c     2         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcore-4dd3ced510320132.rlib(core-4dd3ced510320132.core.f4d53ecc79b85055-cgu.0.rcgu.o):(.text._ZN44_$LT$$RF$T$u20$as$u20$core..fmt..Display$GT$3fmt17he6fd57840175e168E)
+    1d46     1d46        0     1                 $t.800
+    1d47     1d47        c     1                 _$LT$$RF$T$u20$as$u20$core..fmt..Display$GT$::fmt::he6fd57840175e168
+    1d52     1d52        4     2         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.018.rcgu.o):(.text._ZN17compiler_builtins3arm14__aeabi_memcpy17h9b389015148a85b7E)
+    1d52     1d52        0     1                 $t.0
+    1d53     1d53        4     1                 compiler_builtins::arm::__aeabi_memcpy::h9b389015148a85b7
+    1d56     1d56      148     2         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.004.rcgu.o):(.text._ZN17compiler_builtins3mem6memcpy17hab002404c88af38bE)
+    1d56     1d56        0     1                 $t.0
+    1d57     1d57      148     1                 compiler_builtins::mem::memcpy::hab002404c88af38b
+    1e9e     1e9e        4     2         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.139.rcgu.o):(.text.__aeabi_memcpy)
+    1e9e     1e9e        0     1                 $t.0
+    1e9f     1e9f        4     1                 __aeabi_memcpy
+    1ea2     1ea2       18     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libcortex_m_rt-780547e9ed694db2.rlib(cortex_m_rt-780547e9ed694db2.cortex_m_rt.8fb7b1059c3df9f2-cgu.0.rcgu.o):(.HardFaultTrampoline)
+    1ea2     1ea2        0     1                 $t.0
+    1ea3     1ea3       18     1                 HardFaultTrampoline
+    1eba     1eba        2     2         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libcortex_m_rt-780547e9ed694db2.rlib(cortex_m_rt-780547e9ed694db2.cortex_m_rt.8fb7b1059c3df9f2-cgu.0.rcgu.o):(.HardFault.default)
+    1eba     1eba        0     1                 $t.5
+    1ebb     1ebb        2     1                 HardFault_
+    1ebc     1ebc        0     1         . = ALIGN ( 4 )
+    1ebc     1ebc        0     1         __etext = .
+    1ec0     1ec0      450    16 .rodata
+    1ec0     1ec0        0     1         . = ALIGN ( 4 )
+    1ec0     1ec0        0     1         __srodata = .
+    1ec0     1ec0        1     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/minimal-7fa1b75cbed8b92e.minimal.1d6004855a026a85-cgu.0.rcgu.o:(.rodata._ZN7minimal3app24STATIC_CONST_INITIALIZED17h3ae1dd7defb622c6E)
+    1ec0     1ec0        1     1                 minimal::app::STATIC_CONST_INITIALIZED::h3ae1dd7defb622c6
+    1ec1     1ec1        1     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/minimal-7fa1b75cbed8b92e.minimal.1d6004855a026a85-cgu.0.rcgu.o:(.rodata._ZN7minimal3app26STATIC_CONST_UNINITIALIZED17h552b8c12edc2a595E)
+    1ec1     1ec1        1     1                 minimal::app::STATIC_CONST_UNINITIALIZED::h552b8c12edc2a595
+    1ec2     1ec2        1     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/minimal-7fa1b75cbed8b92e.minimal.1d6004855a026a85-cgu.0.rcgu.o:(.rodata._ZN7minimal3app13free_function12STATIC_LOCAL17h50f7874ae59a92baE)
+    1ec2     1ec2        1     1                 minimal::app::free_function::STATIC_LOCAL::h50f7874ae59a92ba
+    1ec3     1ec3        a     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libweek_8-7985e4d478007155.rlib(week_8-7985e4d478007155.week_8.aa6fa5cee2670455-cgu.0.rcgu.o):(.rodata..L__unnamed_2)
+    1ed0     1ed0       10     4         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libweek_8-7985e4d478007155.rlib(week_8-7985e4d478007155.week_8.aa6fa5cee2670455-cgu.0.rcgu.o):(.rodata..L__unnamed_1)
+    1ed0     1ed0       10     1                 .L__unnamed_1
+    1ee0     1ee0       1c    16         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libweek_8-7985e4d478007155.rlib(week_8-7985e4d478007155.week_8.aa6fa5cee2670455-cgu.0.rcgu.o):(.rodata.str.0)
+    1ee0     1ee0       1c     1                 str.0
+    1efc     1efc       10     4         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libpanic_probe-584f6a71cdc40dc3.rlib(panic_probe-584f6a71cdc40dc3.panic_probe.7cb8b6e285d7486e-cgu.0.rcgu.o):(.rodata..L__unnamed_1)
+    1efc     1efc       10     1                 .L__unnamed_1
+    1f0c     1f0c        0     4         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt_rtt-0cd705c6c56326f2.rlib(defmt_rtt-0cd705c6c56326f2.defmt_rtt.655f672f2965888c-cgu.0.rcgu.o):(.rodata..L__unnamed_10)
+    1f0c     1f0c        0     1                 .L__unnamed_10
+    1f0c     1f0c       63     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt_rtt-0cd705c6c56326f2.rlib(defmt_rtt-0cd705c6c56326f2.defmt_rtt.655f672f2965888c-cgu.0.rcgu.o):(.rodata..L__unnamed_12)
+    1f70     1f70       21    16         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt_rtt-0cd705c6c56326f2.rlib(defmt_rtt-0cd705c6c56326f2.defmt_rtt.655f672f2965888c-cgu.0.rcgu.o):(.rodata.str.0)
+    1f70     1f70       21     1                 str.0
+    1f94     1f94       10     4         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt_rtt-0cd705c6c56326f2.rlib(defmt_rtt-0cd705c6c56326f2.defmt_rtt.655f672f2965888c-cgu.0.rcgu.o):(.rodata..L__unnamed_3)
+    1f94     1f94       10     1                 .L__unnamed_3
+    1fb0     1fb0       1c    16         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt_rtt-0cd705c6c56326f2.rlib(defmt_rtt-0cd705c6c56326f2.defmt_rtt.655f672f2965888c-cgu.0.rcgu.o):(.rodata.str.1)
+    1fb0     1fb0       1c     1                 str.1
+    1fcc     1fcc       10     4         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt_rtt-0cd705c6c56326f2.rlib(defmt_rtt-0cd705c6c56326f2.defmt_rtt.655f672f2965888c-cgu.0.rcgu.o):(.rodata..L__unnamed_2)
+    1fcc     1fcc       10     1                 .L__unnamed_2
+    1fdc     1fdc       5f     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt_rtt-0cd705c6c56326f2.rlib(defmt_rtt-0cd705c6c56326f2.defmt_rtt.655f672f2965888c-cgu.0.rcgu.o):(.rodata..L__unnamed_13)
+    203c     203c       10     4         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt_rtt-0cd705c6c56326f2.rlib(defmt_rtt-0cd705c6c56326f2.defmt_rtt.655f672f2965888c-cgu.0.rcgu.o):(.rodata..L__unnamed_1)
+    203c     203c       10     1                 .L__unnamed_1
+    204c     204c       10     4         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt_rtt-0cd705c6c56326f2.rlib(defmt_rtt-0cd705c6c56326f2.defmt_rtt.655f672f2965888c-cgu.0.rcgu.o):(.rodata..L__unnamed_6)
+    204c     204c       10     1                 .L__unnamed_6
+    205c     205c       10     4         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt_rtt-0cd705c6c56326f2.rlib(defmt_rtt-0cd705c6c56326f2.defmt_rtt.655f672f2965888c-cgu.0.rcgu.o):(.rodata..L__unnamed_7)
+    205c     205c       10     1                 .L__unnamed_7
+    206c     206c       10     4         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt_rtt-0cd705c6c56326f2.rlib(defmt_rtt-0cd705c6c56326f2.defmt_rtt.655f672f2965888c-cgu.0.rcgu.o):(.rodata..L__unnamed_8)
+    206c     206c       10     1                 .L__unnamed_8
+    207c     207c       10     4         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt_rtt-0cd705c6c56326f2.rlib(defmt_rtt-0cd705c6c56326f2.defmt_rtt.655f672f2965888c-cgu.0.rcgu.o):(.rodata..L__unnamed_4)
+    207c     207c       10     1                 .L__unnamed_4
+    208c     208c       10     4         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt_rtt-0cd705c6c56326f2.rlib(defmt_rtt-0cd705c6c56326f2.defmt_rtt.655f672f2965888c-cgu.0.rcgu.o):(.rodata..L__unnamed_5)
+    208c     208c       10     1                 .L__unnamed_5
+    209c     209c       1e     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt_rtt-0cd705c6c56326f2.rlib(defmt_rtt-0cd705c6c56326f2.defmt_rtt.655f672f2965888c-cgu.0.rcgu.o):(.rodata..L__unnamed_14)
+    20bc     20bc        8     4         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt_rtt-0cd705c6c56326f2.rlib(defmt_rtt-0cd705c6c56326f2.defmt_rtt.655f672f2965888c-cgu.0.rcgu.o):(.rodata..L__unnamed_9)
+    20bc     20bc        8     1                 .L__unnamed_9
+    20c4     20c4       5b     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt_rtt-0cd705c6c56326f2.rlib(defmt_rtt-0cd705c6c56326f2.defmt_rtt.655f672f2965888c-cgu.0.rcgu.o):(.rodata..L__unnamed_15)
+    2120     2120       10     4         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt_rtt-0cd705c6c56326f2.rlib(defmt_rtt-0cd705c6c56326f2.defmt_rtt.655f672f2965888c-cgu.0.rcgu.o):(.rodata..L__unnamed_11)
+    2120     2120       10     1                 .L__unnamed_11
+    2130     2130        0     4         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt-139d11b2598a2e3b.rlib(defmt-139d11b2598a2e3b.defmt.4c8197b8be145e5b-cgu.0.rcgu.o):(.rodata..L__unnamed_9)
+    2130     2130       18     4         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt-139d11b2598a2e3b.rlib(defmt-139d11b2598a2e3b.defmt.4c8197b8be145e5b-cgu.0.rcgu.o):(.rodata..L__unnamed_1)
+    2130     2130       18     1                 .L__unnamed_1
+    2148     2148        8     4         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt-139d11b2598a2e3b.rlib(defmt-139d11b2598a2e3b.defmt.4c8197b8be145e5b-cgu.0.rcgu.o):(.rodata..L__unnamed_4)
+    2148     2148        8     1                 .L__unnamed_4
+    2150     2150        1     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt-139d11b2598a2e3b.rlib(defmt-139d11b2598a2e3b.defmt.4c8197b8be145e5b-cgu.0.rcgu.o):(.rodata..L__unnamed_5)
+    2150     2150        1     1                 .L__unnamed_5
+    2151     2151        e     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt-139d11b2598a2e3b.rlib(defmt-139d11b2598a2e3b.defmt.4c8197b8be145e5b-cgu.0.rcgu.o):(.rodata..L__unnamed_6)
+    2151     2151        e     1                 .L__unnamed_6
+    215f     215f       57     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt-139d11b2598a2e3b.rlib(defmt-139d11b2598a2e3b.defmt.4c8197b8be145e5b-cgu.0.rcgu.o):(.rodata..L__unnamed_11)
+    21b8     21b8       10     4         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt-139d11b2598a2e3b.rlib(defmt-139d11b2598a2e3b.defmt.4c8197b8be145e5b-cgu.0.rcgu.o):(.rodata..L__unnamed_7)
+    21b8     21b8       10     1                 .L__unnamed_7
+    21c8     21c8        0     4         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcore-4dd3ced510320132.rlib(core-4dd3ced510320132.core.f4d53ecc79b85055-cgu.0.rcgu.o):(.rodata..Lanon.5a80c1532989f1383aa33c13a73348e4.2)
+    21c8     21c8        0     1                 .Lanon.5a80c1532989f1383aa33c13a73348e4.2
+    21c8     21c8        1     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcore-4dd3ced510320132.rlib(core-4dd3ced510320132.core.f4d53ecc79b85055-cgu.0.rcgu.o):(.rodata..Lanon.5a80c1532989f1383aa33c13a73348e4.245)
+    21cc     21cc       18     4         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcore-4dd3ced510320132.rlib(core-4dd3ced510320132.core.f4d53ecc79b85055-cgu.0.rcgu.o):(.rodata..Lanon.5a80c1532989f1383aa33c13a73348e4.257)
+    21cc     21cc       18     1                 .Lanon.5a80c1532989f1383aa33c13a73348e4.257
+    21e4     21e4        c     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcore-4dd3ced510320132.rlib(core-4dd3ced510320132.core.f4d53ecc79b85055-cgu.0.rcgu.o):(.rodata..Lanon.5a80c1532989f1383aa33c13a73348e4.258)
+    21e4     21e4        c     1                 .Lanon.5a80c1532989f1383aa33c13a73348e4.258
+    21f0     21f0        2     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcore-4dd3ced510320132.rlib(core-4dd3ced510320132.core.f4d53ecc79b85055-cgu.0.rcgu.o):(.rodata..Lanon.5a80c1532989f1383aa33c13a73348e4.259)
+    21f0     21f0        2     1                 .Lanon.5a80c1532989f1383aa33c13a73348e4.259
+    21f4     21f4       10     4         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcore-4dd3ced510320132.rlib(core-4dd3ced510320132.core.f4d53ecc79b85055-cgu.0.rcgu.o):(.rodata..Lanon.5a80c1532989f1383aa33c13a73348e4.260)
+    21f4     21f4       10     1                 .Lanon.5a80c1532989f1383aa33c13a73348e4.260
+    2204     2204       c8     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcore-4dd3ced510320132.rlib(core-4dd3ced510320132.core.f4d53ecc79b85055-cgu.0.rcgu.o):(.rodata..Lanon.5a80c1532989f1383aa33c13a73348e4.322)
+    2204     2204       c8     1                 .Lanon.5a80c1532989f1383aa33c13a73348e4.322
+    22cc     22cc       12     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcore-4dd3ced510320132.rlib(core-4dd3ced510320132.core.f4d53ecc79b85055-cgu.0.rcgu.o):(.rodata..Lanon.5a80c1532989f1383aa33c13a73348e4.344)
+    22de     22de       22     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcore-4dd3ced510320132.rlib(core-4dd3ced510320132.core.f4d53ecc79b85055-cgu.0.rcgu.o):(.rodata..Lanon.5a80c1532989f1383aa33c13a73348e4.345)
+    2300     2300       10     4         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcore-4dd3ced510320132.rlib(core-4dd3ced510320132.core.f4d53ecc79b85055-cgu.0.rcgu.o):(.rodata..Lanon.5a80c1532989f1383aa33c13a73348e4.346)
+    2300     2300       10     1                 .Lanon.5a80c1532989f1383aa33c13a73348e4.346
+    2310     2310        0     1         . = ALIGN ( 4 )
+    2310     2310        0     1         __erodata = .
+20000000     2310       3c     4 .data
+20000000     2310        0     1         . = ALIGN ( 4 )
+20000000     2310        0     1         __sdata = .
+20000000     2310        1     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/minimal-7fa1b75cbed8b92e.minimal.1d6004855a026a85-cgu.0.rcgu.o:(.data._ZN7minimal3app22STATIC_MUT_INITIALIZED17h2697f33bbe0e7c06E)
+20000000     2310        1     1                 minimal::app::STATIC_MUT_INITIALIZED::h2697f33bbe0e7c06
+20000004     2314       30     4         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt_rtt-0cd705c6c56326f2.rlib(defmt_rtt-0cd705c6c56326f2.defmt_rtt.655f672f2965888c-cgu.0.rcgu.o):(.data._SEGGER_RTT)
+20000004     2314       30     1                 _SEGGER_RTT
+20000034     2344        6     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt_rtt-0cd705c6c56326f2.rlib(defmt_rtt-0cd705c6c56326f2.defmt_rtt.655f672f2965888c-cgu.0.rcgu.o):(.data)
+20000034     2344        6     1                 defmt_rtt::handle::NAME::heba7653a00d80138
+2000003a     234a        2     1         . = ALIGN ( 4 )
+2000003c     234c        0     1 . = ALIGN ( 4 )
+2000003c     234c        0     1 __edata = .
+2000003c     234c        0     1 __sidata = LOADADDR ( .data )
+    2360     2360        0    32 .gnu.sgstubs
+    2360     2360        0     1         . = ALIGN ( 32 )
+    2360     2360        0     1         __veneer_base = .
+    2360     2360        0     1         . = ALIGN ( 32 )
+    2360     2360        0     1 . = ALIGN ( 32 )
+    2360     2360        0     1 __veneer_limit = .
+2000003c 2000003c       10     4 .bss
+2000003c 2000003c        0     1         . = ALIGN ( 4 )
+2000003c 2000003c        0     1         __sbss = .
+2000003c 2000003c        1     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/minimal-7fa1b75cbed8b92e.minimal.1d6004855a026a85-cgu.0.rcgu.o:(.bss._ZN7minimal3app24STATIC_MUT_UNINITIALIZED17ha2d685c978d322edE)
+2000003c 2000003c        1     1                 minimal::app::STATIC_MUT_UNINITIALIZED::ha2d685c978d322ed
+20000040 20000040        4     4         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libweek_8-7985e4d478007155.rlib(week_8-7985e4d478007155.week_8.aa6fa5cee2670455-cgu.0.rcgu.o):(.bss._ZN6week_85COUNT17h29c75b25b9fd11bfE.0)
+20000040 20000040        4     1                 week_8::COUNT::h29c75b25b9fd11bf (.0)
+20000044 20000044        1     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libnrf52833_pac-d59632473348dc8c.rlib(nrf52833_pac-d59632473348dc8c.nrf52833_pac.b6f3baf0a8d66882-cgu.0.rcgu.o):(.bss.DEVICE_PERIPHERALS)
+20000044 20000044        1     1                 DEVICE_PERIPHERALS
+20000045 20000045        1     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libpanic_probe-584f6a71cdc40dc3.rlib(panic_probe-584f6a71cdc40dc3.panic_probe.7cb8b6e285d7486e-cgu.0.rcgu.o):(.bss._ZN11panic_probe3imp5panic8PANICKED17heb09fad7ce00456eE.0)
+20000045 20000045        1     1                 panic_probe::imp::panic::PANICKED::heb09fad7ce00456e (.0)
+20000046 20000046        1     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libcortex_m-e939a13fc425b469.rlib(cortex_m-e939a13fc425b469.cortex_m.514a0b5a766fa541-cgu.0.rcgu.o):(.bss._ZN8cortex_m10peripheral5TAKEN17h217c3ff44bdb33bcE)
+20000046 20000046        1     1                 cortex_m::peripheral::TAKEN::h217c3ff44bdb33bc
+20000047 20000047        1     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt_rtt-0cd705c6c56326f2.rlib(defmt_rtt-0cd705c6c56326f2.defmt_rtt.655f672f2965888c-cgu.0.rcgu.o):(.bss._ZN9defmt_rtt5TAKEN17h5e96c5fab33a2f46E.0)
+20000047 20000047        1     1                 defmt_rtt::TAKEN::h5e96c5fab33a2f46 (.0)
+20000048 20000048        1     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt_rtt-0cd705c6c56326f2.rlib(defmt_rtt-0cd705c6c56326f2.defmt_rtt.655f672f2965888c-cgu.0.rcgu.o):(.bss._ZN9defmt_rtt10CS_RESTORE17h53f4d77c18e231bfE.0)
+20000048 20000048        1     1                 defmt_rtt::CS_RESTORE::h53f4d77c18e231bf (.0)
+20000049 20000049        3     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt_rtt-0cd705c6c56326f2.rlib(defmt_rtt-0cd705c6c56326f2.defmt_rtt.655f672f2965888c-cgu.0.rcgu.o):(.bss._ZN9defmt_rtt7ENCODER17hbe4a1f5d61b2cbf1E)
+20000049 20000049        3     1                 defmt_rtt::ENCODER::hbe4a1f5d61b2cbf1
+2000004c 2000004c        0     1         . = ALIGN ( 4 )
+2000004c 2000004c        0     1 . = ALIGN ( 4 )
+2000004c 2000004c        0     1 __ebss = .
+2000004c 2000004c      400     4 .uninit
+2000004c 2000004c        0     1         . = ALIGN ( 4 )
+2000004c 2000004c        0     1         __suninit = .
+2000004c 2000004c      400     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt_rtt-0cd705c6c56326f2.rlib(defmt_rtt-0cd705c6c56326f2.defmt_rtt.655f672f2965888c-cgu.0.rcgu.o):(.uninit.defmt-rtt.BUFFER)
+2000004c 2000004c      400     1                 defmt_rtt::handle::BUFFER::h90dc082e646eec63
+2000044c 2000044c        0     1         . = ALIGN ( 4 )
+2000044c 2000044c        0     1         __euninit = .
+2000044c 2000044c        0     1 PROVIDE ( __sheap = __euninit )
+2000044c 2000044c        0     1 
+2000044c 2000044c        0     1 
+2000044c 2000044c        0     1 
+2000044c 2000044c        0     1 
+2000044c 2000044c        0     1 
+2000044c 2000044c        0     1 
+2000044c 2000044c        0     1 
+2000044c 2000044c        0     1 
+2000044c 2000044c        0     1 
+2000044c 2000044c        0     1 
+2000044c 2000044c        0     1 
+2000044c 2000044c        0     1 
+2000044c 2000044c        0     1 
+2000044c 2000044c        0     1 PROVIDE ( POWER_CLOCK = DefaultHandler )
+2000044c 2000044c        0     1 PROVIDE ( RADIO = DefaultHandler )
+2000044c 2000044c        0     1 PROVIDE ( UARTE0_UART0 = DefaultHandler )
+2000044c 2000044c        0     1 PROVIDE ( SPIM0_SPIS0_TWIM0_TWIS0_SPI0_TWI0 = DefaultHandler )
+2000044c 2000044c        0     1 PROVIDE ( SPIM1_SPIS1_TWIM1_TWIS1_SPI1_TWI1 = DefaultHandler )
+2000044c 2000044c        0     1 PROVIDE ( NFCT = DefaultHandler )
+2000044c 2000044c        0     1 PROVIDE ( GPIOTE = DefaultHandler )
+2000044c 2000044c        0     1 PROVIDE ( SAADC = DefaultHandler )
+2000044c 2000044c        0     1 PROVIDE ( TIMER0 = DefaultHandler )
+2000044c 2000044c        0     1 PROVIDE ( TIMER1 = DefaultHandler )
+2000044c 2000044c        0     1 PROVIDE ( TIMER2 = DefaultHandler )
+2000044c 2000044c        0     1 PROVIDE ( RTC0 = DefaultHandler )
+2000044c 2000044c        0     1 PROVIDE ( TEMP = DefaultHandler )
+2000044c 2000044c        0     1 PROVIDE ( RNG = DefaultHandler )
+2000044c 2000044c        0     1 PROVIDE ( ECB = DefaultHandler )
+2000044c 2000044c        0     1 PROVIDE ( CCM_AAR = DefaultHandler )
+2000044c 2000044c        0     1 PROVIDE ( WDT = DefaultHandler )
+2000044c 2000044c        0     1 PROVIDE ( RTC1 = DefaultHandler )
+2000044c 2000044c        0     1 PROVIDE ( QDEC = DefaultHandler )
+2000044c 2000044c        0     1 PROVIDE ( COMP_LPCOMP = DefaultHandler )
+2000044c 2000044c        0     1 PROVIDE ( SWI0_EGU0 = DefaultHandler )
+2000044c 2000044c        0     1 PROVIDE ( SWI1_EGU1 = DefaultHandler )
+2000044c 2000044c        0     1 PROVIDE ( SWI2_EGU2 = DefaultHandler )
+2000044c 2000044c        0     1 PROVIDE ( SWI3_EGU3 = DefaultHandler )
+2000044c 2000044c        0     1 PROVIDE ( SWI4_EGU4 = DefaultHandler )
+2000044c 2000044c        0     1 PROVIDE ( SWI5_EGU5 = DefaultHandler )
+2000044c 2000044c        0     1 PROVIDE ( TIMER3 = DefaultHandler )
+2000044c 2000044c        0     1 PROVIDE ( TIMER4 = DefaultHandler )
+2000044c 2000044c        0     1 PROVIDE ( PWM0 = DefaultHandler )
+2000044c 2000044c        0     1 PROVIDE ( PDM = DefaultHandler )
+2000044c 2000044c        0     1 PROVIDE ( MWU = DefaultHandler )
+2000044c 2000044c        0     1 PROVIDE ( PWM1 = DefaultHandler )
+2000044c 2000044c        0     1 PROVIDE ( PWM2 = DefaultHandler )
+2000044c 2000044c        0     1 PROVIDE ( SPIM2_SPIS2_SPI2 = DefaultHandler )
+2000044c 2000044c        0     1 PROVIDE ( RTC2 = DefaultHandler )
+2000044c 2000044c        0     1 PROVIDE ( I2S = DefaultHandler )
+2000044c 2000044c        0     1 PROVIDE ( FPU = DefaultHandler )
+2000044c 2000044c        0     1 PROVIDE ( USBD = DefaultHandler )
+2000044c 2000044c        0     1 PROVIDE ( UARTE1 = DefaultHandler )
+2000044c 2000044c        0     1 PROVIDE ( PWM3 = DefaultHandler )
+2000044c 2000044c        0     1 PROVIDE ( SPIM3 = DefaultHandler )
+2000044c 2000044c        0     1 
+       0        0       27     4 .defmt
+       0        0        1     1         . = 1
+       1        1        1     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt-139d11b2598a2e3b.rlib(defmt-139d11b2598a2e3b.defmt.4c8197b8be145e5b-cgu.0.rcgu.o):(.defmt.prim.{"package":"defmt","tag":"defmt_prim","data":"{=__internal_Display}","disambiguator":"7474215967741813956","crate_name":"defmt"})
+       1        1        1     1                 {"package":"defmt","tag":"defmt_prim","data":"{=__internal_Display}","disambiguator":"7474215967741813956","crate_name":"defmt"}
+       2        2        1     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt-139d11b2598a2e3b.rlib(defmt-139d11b2598a2e3b.defmt.4c8197b8be145e5b-cgu.0.rcgu.o):(.defmt.prim.{"package":"defmt","tag":"defmt_prim","data":"{=usize}","disambiguator":"16159338187227063405","crate_name":"defmt"})
+       2        2        1     1                 {"package":"defmt","tag":"defmt_prim","data":"{=usize}","disambiguator":"16159338187227063405","crate_name":"defmt"}
+       3        3        1     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/minimal-7fa1b75cbed8b92e.minimal.1d6004855a026a85-cgu.0.rcgu.o:(.defmt.{"package":"week-8","tag":"defmt_info","data":"init","disambiguator":"1246122534012297987","crate_name":"minimal"})
+       3        3        1     1                 {"package":"week-8","tag":"defmt_info","data":"init","disambiguator":"1246122534012297987","crate_name":"minimal"}
+       4        4        1     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/minimal-7fa1b75cbed8b92e.minimal.1d6004855a026a85-cgu.0.rcgu.o:(.defmt.{"package":"week-8","tag":"defmt_info","data":"pre_init '0x{:x}'","disambiguator":"12132363829897343027","crate_name":"minimal"})
+       4        4        1     1                 {"package":"week-8","tag":"defmt_info","data":"pre_init '0x{:x}'","disambiguator":"12132363829897343027","crate_name":"minimal"}
+       5        5        1     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/minimal-7fa1b75cbed8b92e.minimal.1d6004855a026a85-cgu.0.rcgu.o:(.defmt.{"package":"week-8","tag":"defmt_info","data":"stack_start '0x{:x}'","disambiguator":"1316586182074759055","crate_name":"minimal"})
+       5        5        1     1                 {"package":"week-8","tag":"defmt_info","data":"stack_start '0x{:x}'","disambiguator":"1316586182074759055","crate_name":"minimal"}
+       6        6        1     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/minimal-7fa1b75cbed8b92e.minimal.1d6004855a026a85-cgu.0.rcgu.o:(.defmt.{"package":"week-8","tag":"defmt_info","data":"vector_table '0x{:x}'","disambiguator":"572560575018463978","crate_name":"minimal"})
+       6        6        1     1                 {"package":"week-8","tag":"defmt_info","data":"vector_table '0x{:x}'","disambiguator":"572560575018463978","crate_name":"minimal"}
+       7        7        1     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/minimal-7fa1b75cbed8b92e.minimal.1d6004855a026a85-cgu.0.rcgu.o:(.defmt.{"package":"week-8","tag":"defmt_info","data":"reset_vector '0x{:x}'","disambiguator":"14018521498376310851","crate_name":"minimal"})
+       7        7        1     1                 {"package":"week-8","tag":"defmt_info","data":"reset_vector '0x{:x}'","disambiguator":"14018521498376310851","crate_name":"minimal"}
+       8        8        1     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/minimal-7fa1b75cbed8b92e.minimal.1d6004855a026a85-cgu.0.rcgu.o:(.defmt.{"package":"week-8","tag":"defmt_info","data":"eexceptions '0x{:x}'","disambiguator":"8194776587225504807","crate_name":"minimal"})
+       8        8        1     1                 {"package":"week-8","tag":"defmt_info","data":"eexceptions '0x{:x}'","disambiguator":"8194776587225504807","crate_name":"minimal"}
+       9        9        1     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/minimal-7fa1b75cbed8b92e.minimal.1d6004855a026a85-cgu.0.rcgu.o:(.defmt.{"package":"week-8","tag":"defmt_info","data":"stext '0x{:x}'","disambiguator":"3058304737031176593","crate_name":"minimal"})
+       9        9        1     1                 {"package":"week-8","tag":"defmt_info","data":"stext '0x{:x}'","disambiguator":"3058304737031176593","crate_name":"minimal"}
+       a        a        1     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/minimal-7fa1b75cbed8b92e.minimal.1d6004855a026a85-cgu.0.rcgu.o:(.defmt.{"package":"week-8","tag":"defmt_info","data":"etext '0x{:x}'","disambiguator":"6956349043171572470","crate_name":"minimal"})
+       a        a        1     1                 {"package":"week-8","tag":"defmt_info","data":"etext '0x{:x}'","disambiguator":"6956349043171572470","crate_name":"minimal"}
+       b        b        1     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/minimal-7fa1b75cbed8b92e.minimal.1d6004855a026a85-cgu.0.rcgu.o:(.defmt.{"package":"week-8","tag":"defmt_info","data":"srodata '0x{:x}'","disambiguator":"11963590349902198971","crate_name":"minimal"})
+       b        b        1     1                 {"package":"week-8","tag":"defmt_info","data":"srodata '0x{:x}'","disambiguator":"11963590349902198971","crate_name":"minimal"}
+       c        c        1     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/minimal-7fa1b75cbed8b92e.minimal.1d6004855a026a85-cgu.0.rcgu.o:(.defmt.{"package":"week-8","tag":"defmt_info","data":"erodata '0x{:x}'","disambiguator":"17969298924931315700","crate_name":"minimal"})
+       c        c        1     1                 {"package":"week-8","tag":"defmt_info","data":"erodata '0x{:x}'","disambiguator":"17969298924931315700","crate_name":"minimal"}
+       d        d        1     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/minimal-7fa1b75cbed8b92e.minimal.1d6004855a026a85-cgu.0.rcgu.o:(.defmt.{"package":"week-8","tag":"defmt_info","data":"sdata '0x{:x}'","disambiguator":"12604481002641000801","crate_name":"minimal"})
+       d        d        1     1                 {"package":"week-8","tag":"defmt_info","data":"sdata '0x{:x}'","disambiguator":"12604481002641000801","crate_name":"minimal"}
+       e        e        1     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/minimal-7fa1b75cbed8b92e.minimal.1d6004855a026a85-cgu.0.rcgu.o:(.defmt.{"package":"week-8","tag":"defmt_info","data":"edata '0x{:x}'","disambiguator":"6208542403646498186","crate_name":"minimal"})
+       e        e        1     1                 {"package":"week-8","tag":"defmt_info","data":"edata '0x{:x}'","disambiguator":"6208542403646498186","crate_name":"minimal"}
+       f        f        1     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/minimal-7fa1b75cbed8b92e.minimal.1d6004855a026a85-cgu.0.rcgu.o:(.defmt.{"package":"week-8","tag":"defmt_info","data":"sidata '0x{:x}'","disambiguator":"330453009063334749","crate_name":"minimal"})
+       f        f        1     1                 {"package":"week-8","tag":"defmt_info","data":"sidata '0x{:x}'","disambiguator":"330453009063334749","crate_name":"minimal"}
+      10       10        1     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/minimal-7fa1b75cbed8b92e.minimal.1d6004855a026a85-cgu.0.rcgu.o:(.defmt.{"package":"week-8","tag":"defmt_info","data":"veneer_base '0x{:x}'","disambiguator":"11499053420279246896","crate_name":"minimal"})
+      10       10        1     1                 {"package":"week-8","tag":"defmt_info","data":"veneer_base '0x{:x}'","disambiguator":"11499053420279246896","crate_name":"minimal"}
+      11       11        1     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/minimal-7fa1b75cbed8b92e.minimal.1d6004855a026a85-cgu.0.rcgu.o:(.defmt.{"package":"week-8","tag":"defmt_info","data":"veneer_limit '0x{:x}'","disambiguator":"6050796791573075405","crate_name":"minimal"})
+      11       11        1     1                 {"package":"week-8","tag":"defmt_info","data":"veneer_limit '0x{:x}'","disambiguator":"6050796791573075405","crate_name":"minimal"}
+      12       12        1     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/minimal-7fa1b75cbed8b92e.minimal.1d6004855a026a85-cgu.0.rcgu.o:(.defmt.{"package":"week-8","tag":"defmt_info","data":"sbss '0x{:x}'","disambiguator":"5877629815599458905","crate_name":"minimal"})
+      12       12        1     1                 {"package":"week-8","tag":"defmt_info","data":"sbss '0x{:x}'","disambiguator":"5877629815599458905","crate_name":"minimal"}
+      13       13        1     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/minimal-7fa1b75cbed8b92e.minimal.1d6004855a026a85-cgu.0.rcgu.o:(.defmt.{"package":"week-8","tag":"defmt_info","data":"ebss '0x{:x}'","disambiguator":"811283932670028622","crate_name":"minimal"})
+      13       13        1     1                 {"package":"week-8","tag":"defmt_info","data":"ebss '0x{:x}'","disambiguator":"811283932670028622","crate_name":"minimal"}
+      14       14        1     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/minimal-7fa1b75cbed8b92e.minimal.1d6004855a026a85-cgu.0.rcgu.o:(.defmt.{"package":"week-8","tag":"defmt_info","data":"suninit '0x{:x}'","disambiguator":"13102229140017787389","crate_name":"minimal"})
+      14       14        1     1                 {"package":"week-8","tag":"defmt_info","data":"suninit '0x{:x}'","disambiguator":"13102229140017787389","crate_name":"minimal"}
+      15       15        1     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/minimal-7fa1b75cbed8b92e.minimal.1d6004855a026a85-cgu.0.rcgu.o:(.defmt.{"package":"week-8","tag":"defmt_info","data":"euninit '0x{:x}'","disambiguator":"11159456603734680621","crate_name":"minimal"})
+      15       15        1     1                 {"package":"week-8","tag":"defmt_info","data":"euninit '0x{:x}'","disambiguator":"11159456603734680621","crate_name":"minimal"}
+      16       16        1     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/minimal-7fa1b75cbed8b92e.minimal.1d6004855a026a85-cgu.0.rcgu.o:(.defmt.{"package":"week-8","tag":"defmt_info","data":"sheap '0x{:x}'","disambiguator":"2011582754850410258","crate_name":"minimal"})
+      16       16        1     1                 {"package":"week-8","tag":"defmt_info","data":"sheap '0x{:x}'","disambiguator":"2011582754850410258","crate_name":"minimal"}
+      17       17        1     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/minimal-7fa1b75cbed8b92e.minimal.1d6004855a026a85-cgu.0.rcgu.o:(.defmt.{"package":"week-8","tag":"defmt_info","data":"global static mut initialized '0x{:x}'","disambiguator":"16900103816320610066","crate_name":"minimal"})
+      17       17        1     1                 {"package":"week-8","tag":"defmt_info","data":"global static mut initialized '0x{:x}'","disambiguator":"16900103816320610066","crate_name":"minimal"}
+      18       18        1     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/minimal-7fa1b75cbed8b92e.minimal.1d6004855a026a85-cgu.0.rcgu.o:(.defmt.{"package":"week-8","tag":"defmt_info","data":"global static mut uninitialized '0x{:x}'","disambiguator":"2985326493911125103","crate_name":"minimal"})
+      18       18        1     1                 {"package":"week-8","tag":"defmt_info","data":"global static mut uninitialized '0x{:x}'","disambiguator":"2985326493911125103","crate_name":"minimal"}
+      19       19        1     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/minimal-7fa1b75cbed8b92e.minimal.1d6004855a026a85-cgu.0.rcgu.o:(.defmt.{"package":"week-8","tag":"defmt_info","data":"global static const initialized '0x{:x}'","disambiguator":"16550108460662665194","crate_name":"minimal"})
+      19       19        1     1                 {"package":"week-8","tag":"defmt_info","data":"global static const initialized '0x{:x}'","disambiguator":"16550108460662665194","crate_name":"minimal"}
+      1a       1a        1     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/minimal-7fa1b75cbed8b92e.minimal.1d6004855a026a85-cgu.0.rcgu.o:(.defmt.{"package":"week-8","tag":"defmt_info","data":"global static const uninitialized '0x{:x}'","disambiguator":"14193034856772819607","crate_name":"minimal"})
+      1a       1a        1     1                 {"package":"week-8","tag":"defmt_info","data":"global static const uninitialized '0x{:x}'","disambiguator":"14193034856772819607","crate_name":"minimal"}
+      1b       1b        1     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/minimal-7fa1b75cbed8b92e.minimal.1d6004855a026a85-cgu.0.rcgu.o:(.defmt.{"package":"week-8","tag":"defmt_info","data":"function local static '0x{:x}'","disambiguator":"4047104414404895890","crate_name":"minimal"})
+      1b       1b        1     1                 {"package":"week-8","tag":"defmt_info","data":"function local static '0x{:x}'","disambiguator":"4047104414404895890","crate_name":"minimal"}
+      1c       1c        1     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/minimal-7fa1b75cbed8b92e.minimal.1d6004855a026a85-cgu.0.rcgu.o:(.defmt.{"package":"week-8","tag":"defmt_info","data":"function local '0x{:x}'","disambiguator":"14403490150214971235","crate_name":"minimal"})
+      1c       1c        1     1                 {"package":"week-8","tag":"defmt_info","data":"function local '0x{:x}'","disambiguator":"14403490150214971235","crate_name":"minimal"}
+      1d       1d        1     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/minimal-7fa1b75cbed8b92e.minimal.1d6004855a026a85-cgu.0.rcgu.o:(.defmt.{"package":"week-8","tag":"defmt_info","data":"idle","disambiguator":"17148696262289766301","crate_name":"minimal"})
+      1d       1d        1     1                 {"package":"week-8","tag":"defmt_info","data":"idle","disambiguator":"17148696262289766301","crate_name":"minimal"}
+      1e       1e        1     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libweek_8-7985e4d478007155.rlib(week_8-7985e4d478007155.week_8.aa6fa5cee2670455-cgu.0.rcgu.o):(.defmt.{"package":"week-8","tag":"defmt_timestamp","data":"{=usize}","disambiguator":"9208613584203630046","crate_name":"week_8"})
+      1e       1e        1     1                 {"package":"week-8","tag":"defmt_timestamp","data":"{=usize}","disambiguator":"9208613584203630046","crate_name":"week_8"}
+      20       20        4     4         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libweek_8-7985e4d478007155.rlib(week_8-7985e4d478007155.week_8.aa6fa5cee2670455-cgu.0.rcgu.o):(.defmt.end.timestamp)
+      20       20        4     1                 __DEFMT_MARKER_TIMESTAMP_WAS_DEFINED
+      24       24        1     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libpanic_probe-584f6a71cdc40dc3.rlib(panic_probe-584f6a71cdc40dc3.panic_probe.7cb8b6e285d7486e-cgu.0.rcgu.o):(.defmt.{"package":"panic-probe","tag":"defmt_error","data":"{}","disambiguator":"3281125884690968605","crate_name":"panic_probe"})
+      24       24        1     1                 {"package":"panic-probe","tag":"defmt_error","data":"{}","disambiguator":"3281125884690968605","crate_name":"panic_probe"}
+      25       25        2     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt-139d11b2598a2e3b.rlib(defmt-139d11b2598a2e3b.defmt.4c8197b8be145e5b-cgu.0.rcgu.o):(.defmt.end)
+      25       25        1     1                 _defmt_version_ = 4
+      26       26        1     1                 _defmt_encoding_ = rzcobs
+      27       27        0     1         __DEFMT_MARKER_END = .
+2000044c 2000044c        0     1 
+       0        0     958b     1 .debug_loc
+       0        0      3f9     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/minimal-7fa1b75cbed8b92e.minimal.1d6004855a026a85-cgu.0.rcgu.o:(.debug_loc)
+     3f9      3f9       26     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libweek_8-7985e4d478007155.rlib(week_8-7985e4d478007155.week_8.aa6fa5cee2670455-cgu.0.rcgu.o):(.debug_loc)
+     41f      41f     5af4     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libnrf52833_pac-d59632473348dc8c.rlib(nrf52833_pac-d59632473348dc8c.nrf52833_pac.b6f3baf0a8d66882-cgu.0.rcgu.o):(.debug_loc)
+    5f13     5f13      150     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libcortex_m_rt-780547e9ed694db2.rlib(cortex_m_rt-780547e9ed694db2.cortex_m_rt.8fb7b1059c3df9f2-cgu.0.rcgu.o):(.debug_loc)
+    6063     6063       80     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libpanic_probe-584f6a71cdc40dc3.rlib(panic_probe-584f6a71cdc40dc3.panic_probe.7cb8b6e285d7486e-cgu.0.rcgu.o):(.debug_loc)
+    60e3     60e3      7d2     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libcortex_m-e939a13fc425b469.rlib(cortex_m-e939a13fc425b469.cortex_m.514a0b5a766fa541-cgu.0.rcgu.o):(.debug_loc)
+    68b5     68b5       6d     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libcortex_m-e939a13fc425b469.rlib(bin/thumbv7em-none-eabihf.o):(.debug_loc)
+    6922     6922      acd     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libembedded_hal-15d9e77ea7932938.rlib(embedded_hal-15d9e77ea7932938.embedded_hal.e60ee471134047be-cgu.0.rcgu.o):(.debug_loc)
+    73ef     73ef      df8     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt_rtt-0cd705c6c56326f2.rlib(defmt_rtt-0cd705c6c56326f2.defmt_rtt.655f672f2965888c-cgu.0.rcgu.o):(.debug_loc)
+    81e7     81e7     13a4     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt-139d11b2598a2e3b.rlib(defmt-139d11b2598a2e3b.defmt.4c8197b8be145e5b-cgu.0.rcgu.o):(.debug_loc)
+       0        0     28e4     1 .debug_abbrev
+       0        0      1c1     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/minimal-7fa1b75cbed8b92e.minimal.1d6004855a026a85-cgu.0.rcgu.o:(.debug_abbrev)
+     1c1      1c1      1f1     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libweek_8-7985e4d478007155.rlib(week_8-7985e4d478007155.week_8.aa6fa5cee2670455-cgu.0.rcgu.o):(.debug_abbrev)
+     3b2      3b2      14d     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libnrf52833_pac-d59632473348dc8c.rlib(nrf52833_pac-d59632473348dc8c.nrf52833_pac.b6f3baf0a8d66882-cgu.0.rcgu.o):(.debug_abbrev)
+     4ff      4ff      20a     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libcortex_m_rt-780547e9ed694db2.rlib(cortex_m_rt-780547e9ed694db2.cortex_m_rt.8fb7b1059c3df9f2-cgu.0.rcgu.o):(.debug_abbrev)
+     709      709      2d0     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libpanic_probe-584f6a71cdc40dc3.rlib(panic_probe-584f6a71cdc40dc3.panic_probe.7cb8b6e285d7486e-cgu.0.rcgu.o):(.debug_abbrev)
+     9d9      9d9      3c6     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libcortex_m-e939a13fc425b469.rlib(cortex_m-e939a13fc425b469.cortex_m.514a0b5a766fa541-cgu.0.rcgu.o):(.debug_abbrev)
+     d9f      d9f      1b9     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libcortex_m-e939a13fc425b469.rlib(bin/thumbv7em-none-eabihf.o):(.debug_abbrev)
+     f58      f58      2ea     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libembedded_hal-15d9e77ea7932938.rlib(embedded_hal-15d9e77ea7932938.embedded_hal.e60ee471134047be-cgu.0.rcgu.o):(.debug_abbrev)
+    1242     1242      397     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt_rtt-0cd705c6c56326f2.rlib(defmt_rtt-0cd705c6c56326f2.defmt_rtt.655f672f2965888c-cgu.0.rcgu.o):(.debug_abbrev)
+    15d9     15d9      3a3     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt-139d11b2598a2e3b.rlib(defmt-139d11b2598a2e3b.defmt.4c8197b8be145e5b-cgu.0.rcgu.o):(.debug_abbrev)
+    197c     197c      25a     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcore-4dd3ced510320132.rlib(core-4dd3ced510320132.core.f4d53ecc79b85055-cgu.0.rcgu.o):(.debug_abbrev)
+    1bd6     1bd6       31     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.031.rcgu.o):(.debug_abbrev)
+    1c07     1c07      129     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.002.rcgu.o):(.debug_abbrev)
+    1d30     1d30       a5     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.039.rcgu.o):(.debug_abbrev)
+    1dd5     1dd5       c3     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.042.rcgu.o):(.debug_abbrev)
+    1e98     1e98       31     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.062.rcgu.o):(.debug_abbrev)
+    1ec9     1ec9       66     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.018.rcgu.o):(.debug_abbrev)
+    1f2f     1f2f       d7     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.004.rcgu.o):(.debug_abbrev)
+    2006     2006       31     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.063.rcgu.o):(.debug_abbrev)
+    2037     2037       31     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.068.rcgu.o):(.debug_abbrev)
+    2068     2068      192     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.000.rcgu.o):(.debug_abbrev)
+    21fa     21fa       31     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.089.rcgu.o):(.debug_abbrev)
+    222b     222b       b4     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.125.rcgu.o):(.debug_abbrev)
+    22df     22df       a1     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.127.rcgu.o):(.debug_abbrev)
+    2380     2380       c3     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.138.rcgu.o):(.debug_abbrev)
+    2443     2443       31     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.139.rcgu.o):(.debug_abbrev)
+    2474     2474       31     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.171.rcgu.o):(.debug_abbrev)
+    24a5     24a5       31     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.177.rcgu.o):(.debug_abbrev)
+    24d6     24d6       a1     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.179.rcgu.o):(.debug_abbrev)
+    2577     2577       31     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.192.rcgu.o):(.debug_abbrev)
+    25a8     25a8      132     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.001.rcgu.o):(.debug_abbrev)
+    26da     26da       31     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.205.rcgu.o):(.debug_abbrev)
+    270b     270b       a5     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.207.rcgu.o):(.debug_abbrev)
+    27b0     27b0       31     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.214.rcgu.o):(.debug_abbrev)
+    27e1     27e1       65     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.102.rcgu.o):(.debug_abbrev)
+    2846     2846       9e     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.005.rcgu.o):(.debug_abbrev)
+       0        0    49ecd     1 .debug_info
+       0        0     17e8     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/minimal-7fa1b75cbed8b92e.minimal.1d6004855a026a85-cgu.0.rcgu.o:(.debug_info)
+    17e8     17e8      3c0     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libweek_8-7985e4d478007155.rlib(week_8-7985e4d478007155.week_8.aa6fa5cee2670455-cgu.0.rcgu.o):(.debug_info)
+    1ba8     1ba8    11a62     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libnrf52833_pac-d59632473348dc8c.rlib(nrf52833_pac-d59632473348dc8c.nrf52833_pac.b6f3baf0a8d66882-cgu.0.rcgu.o):(.debug_info)
+   1360a    1360a      75d     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libcortex_m_rt-780547e9ed694db2.rlib(cortex_m_rt-780547e9ed694db2.cortex_m_rt.8fb7b1059c3df9f2-cgu.0.rcgu.o):(.debug_info)
+   13d67    13d67      b6c     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libpanic_probe-584f6a71cdc40dc3.rlib(panic_probe-584f6a71cdc40dc3.panic_probe.7cb8b6e285d7486e-cgu.0.rcgu.o):(.debug_info)
+   148d3    148d3     2056     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libcortex_m-e939a13fc425b469.rlib(cortex_m-e939a13fc425b469.cortex_m.514a0b5a766fa541-cgu.0.rcgu.o):(.debug_info)
+   16929    16929      a0d     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libcortex_m-e939a13fc425b469.rlib(bin/thumbv7em-none-eabihf.o):(.debug_info)
+   17336    17336     15cd     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libembedded_hal-15d9e77ea7932938.rlib(embedded_hal-15d9e77ea7932938.embedded_hal.e60ee471134047be-cgu.0.rcgu.o):(.debug_info)
+   18903    18903     2493     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt_rtt-0cd705c6c56326f2.rlib(defmt_rtt-0cd705c6c56326f2.defmt_rtt.655f672f2965888c-cgu.0.rcgu.o):(.debug_info)
+   1ad96    1ad96     3ec3     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt-139d11b2598a2e3b.rlib(defmt-139d11b2598a2e3b.defmt.4c8197b8be145e5b-cgu.0.rcgu.o):(.debug_info)
+   1ec59    1ec59    270f1     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcore-4dd3ced510320132.rlib(core-4dd3ced510320132.core.f4d53ecc79b85055-cgu.0.rcgu.o):(.debug_info)
+   45d4a    45d4a       51     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.031.rcgu.o):(.debug_info)
+   45d9b    45d9b      9e3     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.002.rcgu.o):(.debug_info)
+   4677e    4677e      186     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.039.rcgu.o):(.debug_info)
+   46904    46904      170     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.042.rcgu.o):(.debug_info)
+   46a74    46a74       4b     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.062.rcgu.o):(.debug_info)
+   46abf    46abf      167     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.018.rcgu.o):(.debug_info)
+   46c26    46c26      8a4     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.004.rcgu.o):(.debug_info)
+   474ca    474ca       4b     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.063.rcgu.o):(.debug_info)
+   47515    47515       51     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.068.rcgu.o):(.debug_info)
+   47566    47566     103f     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.000.rcgu.o):(.debug_info)
+   485a5    485a5       4b     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.089.rcgu.o):(.debug_info)
+   485f0    485f0      20a     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.125.rcgu.o):(.debug_info)
+   487fa    487fa      196     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.127.rcgu.o):(.debug_info)
+   48990    48990      158     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.138.rcgu.o):(.debug_info)
+   48ae8    48ae8       4b     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.139.rcgu.o):(.debug_info)
+   48b33    48b33       4b     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.171.rcgu.o):(.debug_info)
+   48b7e    48b7e       4b     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.177.rcgu.o):(.debug_info)
+   48bc9    48bc9      1dc     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.179.rcgu.o):(.debug_info)
+   48da5    48da5       51     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.192.rcgu.o):(.debug_info)
+   48df6    48df6      aa3     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.001.rcgu.o):(.debug_info)
+   49899    49899       4b     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.205.rcgu.o):(.debug_info)
+   498e4    498e4      132     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.207.rcgu.o):(.debug_info)
+   49a16    49a16       4b     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.214.rcgu.o):(.debug_info)
+   49a61    49a61       a1     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.102.rcgu.o):(.debug_info)
+   49b02    49b02      3cb     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.005.rcgu.o):(.debug_info)
+       0        0     38b0     1 .debug_aranges
+       0        0      140     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/minimal-7fa1b75cbed8b92e.minimal.1d6004855a026a85-cgu.0.rcgu.o:(.debug_aranges)
+     140      140       50     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libweek_8-7985e4d478007155.rlib(week_8-7985e4d478007155.week_8.aa6fa5cee2670455-cgu.0.rcgu.o):(.debug_aranges)
+     190      190      880     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libnrf52833_pac-d59632473348dc8c.rlib(nrf52833_pac-d59632473348dc8c.nrf52833_pac.b6f3baf0a8d66882-cgu.0.rcgu.o):(.debug_aranges)
+     a10      a10       68     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libcortex_m_rt-780547e9ed694db2.rlib(cortex_m_rt-780547e9ed694db2.cortex_m_rt.8fb7b1059c3df9f2-cgu.0.rcgu.o):(.debug_aranges)
+     a78      a78       70     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libpanic_probe-584f6a71cdc40dc3.rlib(panic_probe-584f6a71cdc40dc3.panic_probe.7cb8b6e285d7486e-cgu.0.rcgu.o):(.debug_aranges)
+     ae8      ae8       f0     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libcortex_m-e939a13fc425b469.rlib(cortex_m-e939a13fc425b469.cortex_m.514a0b5a766fa541-cgu.0.rcgu.o):(.debug_aranges)
+     bd8      bd8      110     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libcortex_m-e939a13fc425b469.rlib(bin/thumbv7em-none-eabihf.o):(.debug_aranges)
+     ce8      ce8      100     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libembedded_hal-15d9e77ea7932938.rlib(embedded_hal-15d9e77ea7932938.embedded_hal.e60ee471134047be-cgu.0.rcgu.o):(.debug_aranges)
+     de8      de8       d8     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt_rtt-0cd705c6c56326f2.rlib(defmt_rtt-0cd705c6c56326f2.defmt_rtt.655f672f2965888c-cgu.0.rcgu.o):(.debug_aranges)
+     ec0      ec0      7f8     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt-139d11b2598a2e3b.rlib(defmt-139d11b2598a2e3b.defmt.4c8197b8be145e5b-cgu.0.rcgu.o):(.debug_aranges)
+    16b8     16b8     1dd0     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcore-4dd3ced510320132.rlib(core-4dd3ced510320132.core.f4d53ecc79b85055-cgu.0.rcgu.o):(.debug_aranges)
+    3488     3488       20     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.031.rcgu.o):(.debug_aranges)
+    34a8     34a8       38     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.002.rcgu.o):(.debug_aranges)
+    34e0     34e0       20     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.039.rcgu.o):(.debug_aranges)
+    3500     3500       20     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.042.rcgu.o):(.debug_aranges)
+    3520     3520       20     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.062.rcgu.o):(.debug_aranges)
+    3540     3540       68     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.018.rcgu.o):(.debug_aranges)
+    35a8     35a8       90     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.004.rcgu.o):(.debug_aranges)
+    3638     3638       20     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.063.rcgu.o):(.debug_aranges)
+    3658     3658       20     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.068.rcgu.o):(.debug_aranges)
+    3678     3678       38     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.000.rcgu.o):(.debug_aranges)
+    36b0     36b0       20     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.089.rcgu.o):(.debug_aranges)
+    36d0     36d0       20     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.125.rcgu.o):(.debug_aranges)
+    36f0     36f0       20     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.127.rcgu.o):(.debug_aranges)
+    3710     3710       20     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.138.rcgu.o):(.debug_aranges)
+    3730     3730       20     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.139.rcgu.o):(.debug_aranges)
+    3750     3750       20     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.171.rcgu.o):(.debug_aranges)
+    3770     3770       20     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.177.rcgu.o):(.debug_aranges)
+    3790     3790       20     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.179.rcgu.o):(.debug_aranges)
+    37b0     37b0       20     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.192.rcgu.o):(.debug_aranges)
+    37d0     37d0       38     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.001.rcgu.o):(.debug_aranges)
+    3808     3808       20     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.205.rcgu.o):(.debug_aranges)
+    3828     3828       20     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.207.rcgu.o):(.debug_aranges)
+    3848     3848       20     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.214.rcgu.o):(.debug_aranges)
+    3868     3868       20     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.102.rcgu.o):(.debug_aranges)
+    3888     3888       28     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.005.rcgu.o):(.debug_aranges)
+       0        0    251e0     1 .debug_ranges
+       0        0       28     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/minimal-7fa1b75cbed8b92e.minimal.1d6004855a026a85-cgu.0.rcgu.o:(.debug_ranges)
+      28       28       40     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libweek_8-7985e4d478007155.rlib(week_8-7985e4d478007155.week_8.aa6fa5cee2670455-cgu.0.rcgu.o):(.debug_ranges)
+      68       68      860     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libnrf52833_pac-d59632473348dc8c.rlib(nrf52833_pac-d59632473348dc8c.nrf52833_pac.b6f3baf0a8d66882-cgu.0.rcgu.o):(.debug_ranges)
+     8c8      8c8       68     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libcortex_m_rt-780547e9ed694db2.rlib(cortex_m_rt-780547e9ed694db2.cortex_m_rt.8fb7b1059c3df9f2-cgu.0.rcgu.o):(.debug_ranges)
+     930      930       48     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libpanic_probe-584f6a71cdc40dc3.rlib(panic_probe-584f6a71cdc40dc3.panic_probe.7cb8b6e285d7486e-cgu.0.rcgu.o):(.debug_ranges)
+     978      978      128     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libcortex_m-e939a13fc425b469.rlib(cortex_m-e939a13fc425b469.cortex_m.514a0b5a766fa541-cgu.0.rcgu.o):(.debug_ranges)
+     aa0      aa0      100     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libcortex_m-e939a13fc425b469.rlib(bin/thumbv7em-none-eabihf.o):(.debug_ranges)
+     ba0      ba0      130     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libembedded_hal-15d9e77ea7932938.rlib(embedded_hal-15d9e77ea7932938.embedded_hal.e60ee471134047be-cgu.0.rcgu.o):(.debug_ranges)
+     cd0      cd0      550     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt_rtt-0cd705c6c56326f2.rlib(defmt_rtt-0cd705c6c56326f2.defmt_rtt.655f672f2965888c-cgu.0.rcgu.o):(.debug_ranges)
+    1220     1220      770     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt-139d11b2598a2e3b.rlib(defmt-139d11b2598a2e3b.defmt.4c8197b8be145e5b-cgu.0.rcgu.o):(.debug_ranges)
+    1990     1990    226b0     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcore-4dd3ced510320132.rlib(core-4dd3ced510320132.core.f4d53ecc79b85055-cgu.0.rcgu.o):(.debug_ranges)
+   24040    24040      330     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.002.rcgu.o):(.debug_ranges)
+   24370    24370       30     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.042.rcgu.o):(.debug_ranges)
+   243a0    243a0       a0     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.018.rcgu.o):(.debug_ranges)
+   24440    24440      2e0     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.004.rcgu.o):(.debug_ranges)
+   24720    24720      548     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.000.rcgu.o):(.debug_ranges)
+   24c68    24c68       48     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.127.rcgu.o):(.debug_ranges)
+   24cb0    24cb0       30     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.138.rcgu.o):(.debug_ranges)
+   24ce0    24ce0       48     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.179.rcgu.o):(.debug_ranges)
+   24d28    24d28      340     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.001.rcgu.o):(.debug_ranges)
+   25068    25068      178     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.005.rcgu.o):(.debug_ranges)
+       0        0    63af4     1 .debug_str
+       0        0    63af4     1         <internal>:(.debug_str)
+       0        0    1e755     1 .debug_pubnames
+       0        0      23e     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/minimal-7fa1b75cbed8b92e.minimal.1d6004855a026a85-cgu.0.rcgu.o:(.debug_pubnames)
+     23e      23e      1a7     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libweek_8-7985e4d478007155.rlib(week_8-7985e4d478007155.week_8.aa6fa5cee2670455-cgu.0.rcgu.o):(.debug_pubnames)
+     3e5      3e5     339a     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libnrf52833_pac-d59632473348dc8c.rlib(nrf52833_pac-d59632473348dc8c.nrf52833_pac.b6f3baf0a8d66882-cgu.0.rcgu.o):(.debug_pubnames)
+    377f     377f      19e     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libcortex_m_rt-780547e9ed694db2.rlib(cortex_m_rt-780547e9ed694db2.cortex_m_rt.8fb7b1059c3df9f2-cgu.0.rcgu.o):(.debug_pubnames)
+    391d     391d      3db     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libpanic_probe-584f6a71cdc40dc3.rlib(panic_probe-584f6a71cdc40dc3.panic_probe.7cb8b6e285d7486e-cgu.0.rcgu.o):(.debug_pubnames)
+    3cf8     3cf8      82f     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libcortex_m-e939a13fc425b469.rlib(cortex_m-e939a13fc425b469.cortex_m.514a0b5a766fa541-cgu.0.rcgu.o):(.debug_pubnames)
+    4527     4527      2be     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libcortex_m-e939a13fc425b469.rlib(bin/thumbv7em-none-eabihf.o):(.debug_pubnames)
+    47e5     47e5      4f7     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libembedded_hal-15d9e77ea7932938.rlib(embedded_hal-15d9e77ea7932938.embedded_hal.e60ee471134047be-cgu.0.rcgu.o):(.debug_pubnames)
+    4cdc     4cdc      5a1     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt_rtt-0cd705c6c56326f2.rlib(defmt_rtt-0cd705c6c56326f2.defmt_rtt.655f672f2965888c-cgu.0.rcgu.o):(.debug_pubnames)
+    527d     527d      9f5     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt-139d11b2598a2e3b.rlib(defmt-139d11b2598a2e3b.defmt.4c8197b8be145e5b-cgu.0.rcgu.o):(.debug_pubnames)
+    5c72     5c72    168f5     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcore-4dd3ced510320132.rlib(core-4dd3ced510320132.core.f4d53ecc79b85055-cgu.0.rcgu.o):(.debug_pubnames)
+   1c567    1c567       4b     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.031.rcgu.o):(.debug_pubnames)
+   1c5b2    1c5b2      459     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.002.rcgu.o):(.debug_pubnames)
+   1ca0b    1ca0b      131     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.039.rcgu.o):(.debug_pubnames)
+   1cb3c    1cb3c      167     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.042.rcgu.o):(.debug_pubnames)
+   1cca3    1cca3       43     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.062.rcgu.o):(.debug_pubnames)
+   1cce6    1cce6      130     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.018.rcgu.o):(.debug_pubnames)
+   1ce16    1ce16      588     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.004.rcgu.o):(.debug_pubnames)
+   1d39e    1d39e       43     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.063.rcgu.o):(.debug_pubnames)
+   1d3e1    1d3e1       4b     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.068.rcgu.o):(.debug_pubnames)
+   1d42c    1d42c      57b     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.000.rcgu.o):(.debug_pubnames)
+   1d9a7    1d9a7       3b     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.089.rcgu.o):(.debug_pubnames)
+   1d9e2    1d9e2      162     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.125.rcgu.o):(.debug_pubnames)
+   1db44    1db44      127     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.127.rcgu.o):(.debug_pubnames)
+   1dc6b    1dc6b      14c     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.138.rcgu.o):(.debug_pubnames)
+   1ddb7    1ddb7       43     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.139.rcgu.o):(.debug_pubnames)
+   1ddfa    1ddfa       44     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.171.rcgu.o):(.debug_pubnames)
+   1de3e    1de3e       44     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.177.rcgu.o):(.debug_pubnames)
+   1de82    1de82      154     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.179.rcgu.o):(.debug_pubnames)
+   1dfd6    1dfd6       4b     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.192.rcgu.o):(.debug_pubnames)
+   1e021    1e021      3e6     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.001.rcgu.o):(.debug_pubnames)
+   1e407    1e407       44     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.205.rcgu.o):(.debug_pubnames)
+   1e44b    1e44b       f6     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.207.rcgu.o):(.debug_pubnames)
+   1e541    1e541       45     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.214.rcgu.o):(.debug_pubnames)
+   1e586    1e586       94     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.102.rcgu.o):(.debug_pubnames)
+   1e61a    1e61a      13b     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.005.rcgu.o):(.debug_pubnames)
+       0        0     89a8     1 .debug_pubtypes
+       0        0      429     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/minimal-7fa1b75cbed8b92e.minimal.1d6004855a026a85-cgu.0.rcgu.o:(.debug_pubtypes)
+     429      429       ee     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libweek_8-7985e4d478007155.rlib(week_8-7985e4d478007155.week_8.aa6fa5cee2670455-cgu.0.rcgu.o):(.debug_pubtypes)
+     517      517     5bcc     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libnrf52833_pac-d59632473348dc8c.rlib(nrf52833_pac-d59632473348dc8c.nrf52833_pac.b6f3baf0a8d66882-cgu.0.rcgu.o):(.debug_pubtypes)
+    60e3     60e3      38f     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libcortex_m_rt-780547e9ed694db2.rlib(cortex_m_rt-780547e9ed694db2.cortex_m_rt.8fb7b1059c3df9f2-cgu.0.rcgu.o):(.debug_pubtypes)
+    6472     6472      530     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libpanic_probe-584f6a71cdc40dc3.rlib(panic_probe-584f6a71cdc40dc3.panic_probe.7cb8b6e285d7486e-cgu.0.rcgu.o):(.debug_pubtypes)
+    69a2     69a2      76d     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libcortex_m-e939a13fc425b469.rlib(cortex_m-e939a13fc425b469.cortex_m.514a0b5a766fa541-cgu.0.rcgu.o):(.debug_pubtypes)
+    710f     710f       47     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libcortex_m-e939a13fc425b469.rlib(bin/thumbv7em-none-eabihf.o):(.debug_pubtypes)
+    7156     7156      740     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libembedded_hal-15d9e77ea7932938.rlib(embedded_hal-15d9e77ea7932938.embedded_hal.e60ee471134047be-cgu.0.rcgu.o):(.debug_pubtypes)
+    7896     7896      54c     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt_rtt-0cd705c6c56326f2.rlib(defmt_rtt-0cd705c6c56326f2.defmt_rtt.655f672f2965888c-cgu.0.rcgu.o):(.debug_pubtypes)
+    7de2     7de2      8d2     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt-139d11b2598a2e3b.rlib(defmt-139d11b2598a2e3b.defmt.4c8197b8be145e5b-cgu.0.rcgu.o):(.debug_pubtypes)
+    86b4     86b4       12     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcore-4dd3ced510320132.rlib(core-4dd3ced510320132.core.f4d53ecc79b85055-cgu.0.rcgu.o):(.debug_pubtypes)
+    86c6     86c6       12     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.031.rcgu.o):(.debug_pubtypes)
+    86d8     86d8       36     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.002.rcgu.o):(.debug_pubtypes)
+    870e     870e       24     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.039.rcgu.o):(.debug_pubtypes)
+    8732     8732       36     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.042.rcgu.o):(.debug_pubtypes)
+    8768     8768       12     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.062.rcgu.o):(.debug_pubtypes)
+    877a     877a       12     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.018.rcgu.o):(.debug_pubtypes)
+    878c     878c       12     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.004.rcgu.o):(.debug_pubtypes)
+    879e     879e       12     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.063.rcgu.o):(.debug_pubtypes)
+    87b0     87b0       12     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.068.rcgu.o):(.debug_pubtypes)
+    87c2     87c2       36     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.000.rcgu.o):(.debug_pubtypes)
+    87f8     87f8       12     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.089.rcgu.o):(.debug_pubtypes)
+    880a     880a       24     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.125.rcgu.o):(.debug_pubtypes)
+    882e     882e       24     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.127.rcgu.o):(.debug_pubtypes)
+    8852     8852       36     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.138.rcgu.o):(.debug_pubtypes)
+    8888     8888       12     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.139.rcgu.o):(.debug_pubtypes)
+    889a     889a       12     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.171.rcgu.o):(.debug_pubtypes)
+    88ac     88ac       12     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.177.rcgu.o):(.debug_pubtypes)
+    88be     88be       24     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.179.rcgu.o):(.debug_pubtypes)
+    88e2     88e2       12     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.192.rcgu.o):(.debug_pubtypes)
+    88f4     88f4       36     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.001.rcgu.o):(.debug_pubtypes)
+    892a     892a       12     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.205.rcgu.o):(.debug_pubtypes)
+    893c     893c       24     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.207.rcgu.o):(.debug_pubtypes)
+    8960     8960       12     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.214.rcgu.o):(.debug_pubtypes)
+    8972     8972       24     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.102.rcgu.o):(.debug_pubtypes)
+    8996     8996       12     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.005.rcgu.o):(.debug_pubtypes)
+       0        0       48     1 .comment
+       0        0       48     1         <internal>:(.comment)
+       0        0       3a     1 .ARM.attributes
+       0        0       3a     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/minimal-7fa1b75cbed8b92e.minimal.1d6004855a026a85-cgu.0.rcgu.o:(.ARM.attributes)
+       0        0     966c     4 .debug_frame
+       0        0       7c     4         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/minimal-7fa1b75cbed8b92e.minimal.1d6004855a026a85-cgu.0.rcgu.o:(.debug_frame)
+      7c       7c       84     4         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libweek_8-7985e4d478007155.rlib(week_8-7985e4d478007155.week_8.aa6fa5cee2670455-cgu.0.rcgu.o):(.debug_frame)
+     100      100     1514     4         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libnrf52833_pac-d59632473348dc8c.rlib(nrf52833_pac-d59632473348dc8c.nrf52833_pac.b6f3baf0a8d66882-cgu.0.rcgu.o):(.debug_frame)
+    1614     1614       b4     4         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libcortex_m_rt-780547e9ed694db2.rlib(cortex_m_rt-780547e9ed694db2.cortex_m_rt.8fb7b1059c3df9f2-cgu.0.rcgu.o):(.debug_frame)
+    16c8     16c8       c8     4         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libpanic_probe-584f6a71cdc40dc3.rlib(panic_probe-584f6a71cdc40dc3.panic_probe.7cb8b6e285d7486e-cgu.0.rcgu.o):(.debug_frame)
+    1790     1790      1cc     4         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libcortex_m-e939a13fc425b469.rlib(cortex_m-e939a13fc425b469.cortex_m.514a0b5a766fa541-cgu.0.rcgu.o):(.debug_frame)
+    195c     195c      204     4         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libcortex_m-e939a13fc425b469.rlib(bin/thumbv7em-none-eabihf.o):(.debug_frame)
+    1b60     1b60      228     4         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libembedded_hal-15d9e77ea7932938.rlib(embedded_hal-15d9e77ea7932938.embedded_hal.e60ee471134047be-cgu.0.rcgu.o):(.debug_frame)
+    1d88     1d88      1d0     4         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt_rtt-0cd705c6c56326f2.rlib(defmt_rtt-0cd705c6c56326f2.defmt_rtt.655f672f2965888c-cgu.0.rcgu.o):(.debug_frame)
+    1f58     1f58      5c8     4         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt-139d11b2598a2e3b.rlib(defmt-139d11b2598a2e3b.defmt.4c8197b8be145e5b-cgu.0.rcgu.o):(.debug_frame)
+    2520     2520     6924     4         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcore-4dd3ced510320132.rlib(core-4dd3ced510320132.core.f4d53ecc79b85055-cgu.0.rcgu.o):(.debug_frame)
+    8e44     8e44       24     4         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.031.rcgu.o):(.debug_frame)
+    8e68     8e68       90     4         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.002.rcgu.o):(.debug_frame)
+    8ef8     8ef8       38     4         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.039.rcgu.o):(.debug_frame)
+    8f30     8f30       30     4         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.042.rcgu.o):(.debug_frame)
+    8f60     8f60       24     4         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.062.rcgu.o):(.debug_frame)
+    8f84     8f84       d4     4         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.018.rcgu.o):(.debug_frame)
+    9058     9058      208     4         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.004.rcgu.o):(.debug_frame)
+    9260     9260       24     4         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.063.rcgu.o):(.debug_frame)
+    9284     9284       30     4         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.068.rcgu.o):(.debug_frame)
+    92b4     92b4       90     4         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.000.rcgu.o):(.debug_frame)
+    9344     9344       24     4         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.089.rcgu.o):(.debug_frame)
+    9368     9368       38     4         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.125.rcgu.o):(.debug_frame)
+    93a0     93a0       38     4         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.127.rcgu.o):(.debug_frame)
+    93d8     93d8       34     4         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.138.rcgu.o):(.debug_frame)
+    940c     940c       24     4         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.139.rcgu.o):(.debug_frame)
+    9430     9430       24     4         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.171.rcgu.o):(.debug_frame)
+    9454     9454       24     4         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.177.rcgu.o):(.debug_frame)
+    9478     9478       38     4         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.179.rcgu.o):(.debug_frame)
+    94b0     94b0       24     4         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.192.rcgu.o):(.debug_frame)
+    94d4     94d4       8c     4         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.001.rcgu.o):(.debug_frame)
+    9560     9560       24     4         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.205.rcgu.o):(.debug_frame)
+    9584     9584       30     4         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.207.rcgu.o):(.debug_frame)
+    95b4     95b4       24     4         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.214.rcgu.o):(.debug_frame)
+    95d8     95d8       30     4         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.102.rcgu.o):(.debug_frame)
+    9608     9608       64     4         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.005.rcgu.o):(.debug_frame)
+       0        0    34d0b     1 .debug_line
+       0        0      57b     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/minimal-7fa1b75cbed8b92e.minimal.1d6004855a026a85-cgu.0.rcgu.o:(.debug_line)
+     57b      57b      15d     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libweek_8-7985e4d478007155.rlib(week_8-7985e4d478007155.week_8.aa6fa5cee2670455-cgu.0.rcgu.o):(.debug_line)
+     6d8      6d8     2b31     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libnrf52833_pac-d59632473348dc8c.rlib(nrf52833_pac-d59632473348dc8c.nrf52833_pac.b6f3baf0a8d66882-cgu.0.rcgu.o):(.debug_line)
+    3209     3209      202     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libcortex_m_rt-780547e9ed694db2.rlib(cortex_m_rt-780547e9ed694db2.cortex_m_rt.8fb7b1059c3df9f2-cgu.0.rcgu.o):(.debug_line)
+    340b     340b      380     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libpanic_probe-584f6a71cdc40dc3.rlib(panic_probe-584f6a71cdc40dc3.panic_probe.7cb8b6e285d7486e-cgu.0.rcgu.o):(.debug_line)
+    378b     378b      855     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libcortex_m-e939a13fc425b469.rlib(cortex_m-e939a13fc425b469.cortex_m.514a0b5a766fa541-cgu.0.rcgu.o):(.debug_line)
+    3fe0     3fe0      4ad     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libcortex_m-e939a13fc425b469.rlib(bin/thumbv7em-none-eabihf.o):(.debug_line)
+    448d     448d      550     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libembedded_hal-15d9e77ea7932938.rlib(embedded_hal-15d9e77ea7932938.embedded_hal.e60ee471134047be-cgu.0.rcgu.o):(.debug_line)
+    49dd     49dd      a4b     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt_rtt-0cd705c6c56326f2.rlib(defmt_rtt-0cd705c6c56326f2.defmt_rtt.655f672f2965888c-cgu.0.rcgu.o):(.debug_line)
+    5428     5428      ee1     1         /repository_root/homework/week_8/target/thumbv7em-none-eabihf/debug/deps/libdefmt-139d11b2598a2e3b.rlib(defmt-139d11b2598a2e3b.defmt.4c8197b8be145e5b-cgu.0.rcgu.o):(.debug_line)
+    6309     6309    2a64f     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcore-4dd3ced510320132.rlib(core-4dd3ced510320132.core.f4d53ecc79b85055-cgu.0.rcgu.o):(.debug_line)
+   30958    30958       42     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.031.rcgu.o):(.debug_line)
+   3099a    3099a      7fc     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.002.rcgu.o):(.debug_line)
+   31196    31196      21f     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.039.rcgu.o):(.debug_line)
+   313b5    313b5      1fc     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.042.rcgu.o):(.debug_line)
+   315b1    315b1       42     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.062.rcgu.o):(.debug_line)
+   315f3    315f3      28e     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.018.rcgu.o):(.debug_line)
+   31881    31881      e0c     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.004.rcgu.o):(.debug_line)
+   3268d    3268d       42     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.063.rcgu.o):(.debug_line)
+   326cf    326cf       49     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.068.rcgu.o):(.debug_line)
+   32718    32718      9a2     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.000.rcgu.o):(.debug_line)
+   330ba    330ba       42     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.089.rcgu.o):(.debug_line)
+   330fc    330fc      25c     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.125.rcgu.o):(.debug_line)
+   33358    33358      223     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.127.rcgu.o):(.debug_line)
+   3357b    3357b      1b9     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.138.rcgu.o):(.debug_line)
+   33734    33734       42     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.139.rcgu.o):(.debug_line)
+   33776    33776       42     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.171.rcgu.o):(.debug_line)
+   337b8    337b8       42     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.177.rcgu.o):(.debug_line)
+   337fa    337fa      244     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.179.rcgu.o):(.debug_line)
+   33a3e    33a3e       42     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.192.rcgu.o):(.debug_line)
+   33a80    33a80      96c     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.001.rcgu.o):(.debug_line)
+   343ec    343ec       42     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.205.rcgu.o):(.debug_line)
+   3442e    3442e      204     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.207.rcgu.o):(.debug_line)
+   34632    34632       4b     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.214.rcgu.o):(.debug_line)
+   3467d    3467d       99     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.102.rcgu.o):(.debug_line)
+   34716    34716      5f5     1         /home_dir/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/thumbv7em-none-eabihf/lib/libcompiler_builtins-da2dbdac6c4ed8ee.rlib(compiler_builtins-da2dbdac6c4ed8ee.compiler_builtins.ff12d5582ac7b86e-cgu.005.rcgu.o):(.debug_line)
+       0        0     1490     4 .symtab
+       0        0     1490     4         <internal>:(.symtab)
+       0        0       fd     1 .shstrtab
+       0        0       fd     1         <internal>:(.shstrtab)
+       0        0     2d48     1 .strtab
+       0        0     2d48     1         <internal>:(.strtab)
