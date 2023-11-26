@@ -1,4 +1,4 @@
-# `micro:bit` template
+# Examination of the linker's work for the `micro:bit`
 
 A minimal RTIC application dumping a set of addresses to examine the linker's work.
 
