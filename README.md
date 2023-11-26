@@ -11,3 +11,4 @@ Please be aware though, that (at least for the moment being) I do not take any P
 
 - [Week 3: Blinky](homework/week_3/blinky/)
 - [Week 5: CLI](homework/week_5/command-rs/)
+- [Week 8: Mapfile examination](homework/week_8/)
