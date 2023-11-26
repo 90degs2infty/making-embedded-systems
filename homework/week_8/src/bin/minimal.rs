@@ -26,16 +26,40 @@ mod app {
         // TODO: Add resources
     }
 
-    static mut static_mut_initialized: u8 = 42;
-    static mut static_mut_uninitialized: MaybeUninit<u8> = MaybeUninit::uninit();
+    static mut STATIC_MUT_INITIALIZED: u8 = 42;
+    static mut STATIC_MUT_UNINITIALIZED: MaybeUninit<u8> = MaybeUninit::uninit();
 
-    macro_rules! get_dunder {
-        ($dst:ident, $src:ident) => {
-            let $dst: usize;
-            unsafe {
-                $dst = &$src as *const u8 as usize;
-            }
+    static STATIC_CONST_INITIALIZED: u8 = 21;
+    static STATIC_CONST_UNINITIALIZED: MaybeUninit<u8> = MaybeUninit::uninit();
+
+    // As seen at
+    // https://docs.rust-embedded.org/embedonomicon/main.html#life-before-main
+    // and
+    // https://stackoverflow.com/questions/35882994/is-there-any-way-to-get-the-address-of-a-struct-in-rust
+    macro_rules! compute_addr {
+        ($src:ident) => {
+            &$src as *const _ as usize
         };
+    }
+
+    macro_rules! store_addr_unsafe {
+        ($dst:ident, $src:ident) => {
+            $dst = compute_addr!($src);
+        };
+    }
+
+    /// (address static function-local variable, address non-static function-local variable)
+    unsafe fn free_function() -> (usize, usize) {
+        static STATIC_LOCAL: u8 = 255;
+        let local: u8 = 2;
+
+        let static_local_addr: usize;
+        let local_addr: usize;
+
+        store_addr_unsafe!(static_local_addr, STATIC_LOCAL);
+        store_addr_unsafe!(local_addr, local);
+
+        (static_local_addr, local_addr)
     }
 
     #[init]
@@ -73,33 +97,80 @@ mod app {
         }
 
         // get all the __foo values from above
-        get_dunder!(pre_init, __pre_init);
-        get_dunder!(stack_start, _stack_start);
+        let pre_init: usize;
+        let stack_start: usize;
 
-        get_dunder!(vector_table, __vector_table);
-        get_dunder!(reset_vector, __reset_vector);
-        get_dunder!(eexceptions, __eexceptions);
+        let vector_table: usize;
+        let reset_vector: usize;
+        let eexceptions: usize;
 
-        get_dunder!(stext, __stext);
-        get_dunder!(etext, __etext);
+        let stext: usize;
+        let etext: usize;
 
-        get_dunder!(srodata, __srodata);
-        get_dunder!(erodata, __erodata);
+        let srodata: usize;
+        let erodata: usize;
 
-        get_dunder!(sdata, __sdata);
-        get_dunder!(edata, __edata);
+        let sdata: usize;
+        let edata: usize;
 
-        get_dunder!(sidata, __sidata);
-        get_dunder!(veneer_base, __veneer_base);
-        get_dunder!(veneer_limit, __veneer_limit);
+        let sidata: usize;
+        let veneer_base: usize;
+        let veneer_limit: usize;
 
-        get_dunder!(sbss, __sbss);
-        get_dunder!(ebss, __ebss);
+        let sbss: usize;
+        let ebss: usize;
 
-        get_dunder!(suninit, __suninit);
-        get_dunder!(euninit, __euninit);
+        let suninit: usize;
+        let euninit: usize;
 
-        get_dunder!(sheap, __sheap);
+        let sheap: usize;
+
+        let global_static_mut_init: usize;
+        let global_static_mut_uninit: usize;
+
+        let global_static_const_init: usize;
+        let global_static_const_uninit: usize;
+
+        let function_static_local: usize;
+        let function_local: usize;
+
+        unsafe {
+            store_addr_unsafe!(pre_init, __pre_init);
+            store_addr_unsafe!(stack_start, _stack_start);
+
+            store_addr_unsafe!(vector_table, __vector_table);
+            store_addr_unsafe!(reset_vector, __reset_vector);
+            store_addr_unsafe!(eexceptions, __eexceptions);
+
+            store_addr_unsafe!(stext, __stext);
+            store_addr_unsafe!(etext, __etext);
+
+            store_addr_unsafe!(srodata, __srodata);
+            store_addr_unsafe!(erodata, __erodata);
+
+            store_addr_unsafe!(sdata, __sdata);
+            store_addr_unsafe!(edata, __edata);
+
+            store_addr_unsafe!(sidata, __sidata);
+            store_addr_unsafe!(veneer_base, __veneer_base);
+            store_addr_unsafe!(veneer_limit, __veneer_limit);
+
+            store_addr_unsafe!(sbss, __sbss);
+            store_addr_unsafe!(ebss, __ebss);
+
+            store_addr_unsafe!(suninit, __suninit);
+            store_addr_unsafe!(euninit, __euninit);
+
+            store_addr_unsafe!(sheap, __sheap);
+
+            store_addr_unsafe!(global_static_mut_init, STATIC_MUT_INITIALIZED);
+            store_addr_unsafe!(global_static_mut_uninit, STATIC_MUT_UNINITIALIZED);
+
+            store_addr_unsafe!(global_static_const_init, STATIC_CONST_INITIALIZED);
+            store_addr_unsafe!(global_static_const_uninit, STATIC_CONST_UNINITIALIZED);
+
+            (function_static_local, function_local) = free_function();
+        }
 
         // dump all the __foo values via RTT
         defmt::info!("pre_init '0x{:x}'", pre_init);
@@ -130,13 +201,26 @@ mod app {
 
         defmt::info!("sheap '0x{:x}'", sheap);
 
-        defmt::info!("static_mut_initialized '0x{:x}'", unsafe {
-            &static_mut_initialized as *const _ as usize
-        });
+        defmt::info!(
+            "global static mut initialized '0x{:x}'",
+            global_static_mut_init
+        );
+        defmt::info!(
+            "global static mut uninitialized '0x{:x}'",
+            global_static_mut_uninit
+        );
 
-        defmt::info!("static_mut_uninitialized '0x{:x}'", unsafe {
-            &static_mut_uninitialized as *const _ as usize
-        });
+        defmt::info!(
+            "global static const initialized '0x{:x}'",
+            global_static_const_init
+        );
+        defmt::info!(
+            "global static const uninitialized '0x{:x}'",
+            global_static_const_uninit
+        );
+
+        defmt::info!("function local static '0x{:x}'", function_static_local);
+        defmt::info!("function local '0x{:x}'", function_local);
 
         (
             Shared {
